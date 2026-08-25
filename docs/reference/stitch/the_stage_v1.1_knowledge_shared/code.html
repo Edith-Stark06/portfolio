@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Stage - AETHER AUTOMATION SEQUENCE</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Inter:wght@400&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#f4f4f4",
+                        "on-primary": "#002979",
+                        "on-secondary-container": "#004347",
+                        "on-primary-fixed": "#00174c",
+                        "primary-container": "#0f62fe",
+                        "surface-variant": "#353535",
+                        "secondary-fixed": "#7ff4ff",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "error-container": "#93000a",
+                        "on-error": "#690005",
+                        "on-surface-variant": "#c3c6d8",
+                        "on-surface": "#e2e2e2",
+                        "surface-container-high": "#2a2a2a",
+                        "inverse-surface": "#e2e2e2",
+                        "surface-bright": "#393939",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "primary": "#b4c5ff",
+                        "surface-container": "#1f1f1f",
+                        "background": "#131313",
+                        "surface-container-low": "#1b1b1b",
+                        "on-secondary-fixed-variant": "#004f55",
+                        "outline": "#8c90a2",
+                        "primary-fixed": "#dbe1ff",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "secondary-container": "#02b7c3",
+                        "surface-tint": "#b4c5ff",
+                        "outline-variant": "#424656",
+                        "surface-container-highest": "#353535",
+                        "inverse-on-surface": "#303030",
+                        "tertiary-fixed": "#e2e2e2",
+                        "on-secondary-fixed": "#002022",
+                        "on-error-container": "#ffdad6",
+                        "surface": "#131313",
+                        "on-tertiary": "#2f3131",
+                        "tertiary": "#c6c6c7",
+                        "secondary": "#4bd9e5",
+                        "on-background": "#e2e2e2",
+                        "inverse-primary": "#0052dd",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "secondary-fixed-dim": "#4bd9e5",
+                        "surface-container-lowest": "#0e0e0e",
+                        "error": "#ffb4ab",
+                        "surface-dim": "#131313",
+                        "on-primary-fixed-variant": "#003da9",
+                        "on-primary-container": "#f3f3ff",
+                        "tertiary-container": "#6e7070",
+                        "on-secondary": "#00363b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "bento-gap": "16px",
+                        "container-max": "1440px",
+                        "section-gap": "160px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "80px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "display-hero-mobile": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"],
+                        "mono-label": ["JetBrains Mono"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "display-hero": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "display-hero-mobile": ["64px", { "lineHeight": "60px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "27px", "letterSpacing": "0", "fontWeight": "400" }],
+                        "mono-label": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "display-hero": ["140px", { "lineHeight": "120px", "letterSpacing": "-0.05em", "fontWeight": "800" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400" }],
+                        "headline-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #131313;
+            color: #e2e2e2;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Cinematic Film Grain */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.04;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+
+        /* Glassmorphism & Bento Box Utilities */
+        .glass-panel {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .primary-glow {
+            box-shadow: 0 0 40px 10px rgba(15, 98, 254, 0.15);
+        }
+
+        .primary-button {
+            background-color: #0F62FE;
+            color: #ffffff;
+            text-transform: uppercase;
+            font-weight: bold;
+            border-radius: 9999px;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 0 40px rgba(15, 98, 254, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .primary-button:hover {
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 0 60px rgba(15, 98, 254, 0.4);
+            transform: scale(1.02);
+        }
+
+        /* AI Status Indicator */
+        .ai-pulse-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #00B7C3;
+            border-radius: 50%;
+            position: relative;
+        }
+        .ai-pulse-dot::before, .ai-pulse-dot::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            background-color: rgba(0, 183, 195, 0.4);
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        .ai-pulse-dot::after {
+            animation-delay: 1s;
+        }
+        @keyframes pulse {
+            0% { width: 8px; height: 8px; opacity: 1; }
+            100% { width: 32px; height: 32px; opacity: 0; }
+        }
+
+        /* Spotlight Animation */
+        .spotlight {
+            position: absolute;
+            top: -50%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150vw;
+            height: 150vh;
+            background: radial-gradient(ellipse at top, rgba(255, 230, 200, 0.08) 0%, rgba(15, 98, 254, 0.02) 40%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-primary-container selection:text-white">
+<!-- Top Navigation -->
+<nav aria-label="Main Navigation" class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-white/10">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-6 max-w-container-max mx-auto">
+<a class="font-mono-label text-mono-label font-bold tracking-tighter text-primary z-10" href="#">AETHER_ENG</a>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">About</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Journey</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Research</a>
+<a class="font-body-md text-body-md text-primary font-bold border-b border-primary pb-1 active:scale-95 transition-transform" href="#">Projects</a>
+</div>
+<button class="hidden md:flex font-mono-label text-mono-label px-6 py-3 primary-button z-10">Hire Me</button>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<main class="relative z-10 flex flex-col pt-[120px] pb-section-gap">
+<div class="spotlight"></div>
+<!-- Hero Section -->
+<header class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full min-h-[614px] flex flex-col items-center justify-center text-center reveal-on-scroll">
+<h1 class="font-display-hero-mobile md:font-display-hero text-display-hero-mobile md:text-display-hero text-on-background mb-8">The Stage</h1>
+<p class="font-headline-md text-headline-md text-on-surface-variant max-w-3xl">Advocacy, Leadership, and the Pan-India Network.</p>
+</header>
+<!-- Keynote Section -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full mt-section-gap reveal-on-scroll">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-bento-gap">
+<div class="col-span-1 md:col-span-12 mb-8">
+<div class="flex items-center gap-4 mb-4">
+<div class="ai-pulse-dot"></div>
+<span class="font-mono-label text-mono-label text-secondary uppercase tracking-widest">IBM TechXchange 2024</span>
+</div>
+</div>
+<div class="col-span-1 md:col-span-8 h-[600px] glass-panel rounded-xl overflow-hidden relative group">
+<div class="absolute inset-0 bg-cover bg-center w-full h-full transition-transform duration-700 group-hover:scale-105" data-alt="Knowledge Shared Background for Stage/Speaking. Subject: High-end editorial stage lighting with deep shadows. Style: Event documentary, cinematic. Soft volumetric highlights (soft white and IBM Blue). Abstract architectural textures. Dramatic contrast." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBoZMZn-1R4DeOqEHRjj060QchmIxKPEmActiX9BxvlSAVoOJ4adw74VwkxFs4cYPEg6gbLO9Oytf8buTKevDTKuYGIYHYzXFzaXkwaAPSnSWOFx9u_Aad9X14XtyMJ6EqvQQL2eVbgIROwDXDkT-uZRl9apiBwvLxf2GQ5fJ7KVdAai2lM-xFUtgBEvsCLShA7V-LnhRmhIgCfrKWz1nGuoRB2aZ2enbmAcOJIWT_MIJK7gPsRYY1pQQ')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80"></div>
+</div>
+<div class="col-span-1 md:col-span-4 flex flex-col gap-bento-gap">
+<div class="glass-panel rounded-xl p-8 flex-1 flex flex-col justify-center border-l-4 border-l-primary-container">
+<span class="material-symbols-outlined text-4xl text-primary-container mb-6 opacity-50" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+<blockquote class="font-headline-md text-headline-md text-on-background italic leading-tight">
+                            "Automation isn't just about replacing effort; it's about engineering a canvas for human creativity."
+                        </blockquote>
+</div>
+<div class="glass-panel rounded-xl p-8 h-48 flex items-center justify-between group cursor-pointer hover:bg-surface-container-high transition-colors">
+<div>
+<p class="font-mono-label text-mono-label text-on-surface-variant mb-2">Watch Keynote</p>
+<p class="font-body-lg text-body-lg text-on-background font-bold">Main Stage Panel</p>
+</div>
+<div class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-primary-container group-hover:border-primary-container transition-all">
+<span class="material-symbols-outlined text-on-background">play_arrow</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- The Network Section -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full mt-section-gap reveal-on-scroll">
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-12">The Network</h2>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-bento-gap">
+<div class="col-span-1 md:col-span-4 glass-panel rounded-xl p-8 flex flex-col justify-between h-[400px]">
+<div class="font-mono-label text-mono-label text-on-surface-variant border border-outline-variant rounded-full px-4 py-1 self-start">Pan-India Reach</div>
+<div>
+<div class="font-display-hero text-headline-lg text-primary-container mb-2">50+</div>
+<p class="font-body-lg text-body-lg text-on-surface">Campus Chapters Founded</p>
+</div>
+</div>
+<div class="col-span-1 md:col-span-8 glass-panel rounded-xl p-8 h-[400px] relative overflow-hidden flex items-end">
+<div class="absolute inset-0 bg-cover bg-center w-full h-full opacity-40 mix-blend-screen" data-alt="A cinematic, abstract representation of a vast, interconnected digital network spanning across a dark map of India. Glowing data nodes pulse with warm stage light colors and electric blue connections. Depth of field effect blurs the edges, focusing on central high-density clusters. High-tech, premium data visualization style, dark mode aesthetic." data-location="India" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCjV_hpfokVxqe52QYVZdv5B9e8Qwzp6S49zPIohTrve41Wc3X9vvUPD1qieMXWpuQF-6JHGYRmxC-tQTaO-TUqyzlcR8jL5BKqzOrais5rPs8PNSvJn921b562iqF7nSSTIQLNFUM-j5E1ZIEyHUA_R1eylhhv0GuczgxId-KwIVDIkZlMVTgHSHgfeYEwjl_ir-VQgsBHbHpBtrzqdxGUwX8r3Nm_0AeEIlIuDFQbtJ_VGHkLGQI7ng')"></div>
+<div class="relative z-10">
+<h3 class="font-headline-md text-headline-md text-on-background mb-4">Building the Foundation</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-lg">Establishing a multi-campus ambassador network to drive technological advocacy and democratize access to advanced automation workflows.</p>
+</div>
+</div>
+<div class="col-span-1 md:col-span-6 glass-panel rounded-xl p-8 h-[300px] flex items-center justify-between">
+<div>
+<div class="font-display-hero text-headline-lg text-secondary-container mb-2">10k+</div>
+<p class="font-body-lg text-body-lg text-on-surface">Community Members</p>
+</div>
+<span class="material-symbols-outlined text-[120px] text-white/5" style="font-variation-settings: 'FILL' 1;">groups</span>
+</div>
+<div class="col-span-1 md:col-span-6 glass-panel rounded-xl p-8 h-[300px] flex items-center justify-between">
+<div>
+<div class="font-display-hero text-headline-lg text-primary mb-2">120+</div>
+<p class="font-body-lg text-body-lg text-on-surface">Workshops Delivered</p>
+</div>
+<span class="material-symbols-outlined text-[120px] text-white/5" style="font-variation-settings: 'FILL' 1;">co_present</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full relative py-section-gap bg-background flex flex-col items-center justify-center px-margin-mobile md:px-margin-desktop text-center mt-section-gap z-10 border-t border-white/5">
+<h2 class="font-display-hero text-headline-lg md:text-display-hero uppercase text-on-background mb-12">AETHER AUTOMATION SEQUENCE</h2>
+<div class="flex gap-8 mb-12">
+<a class="font-body-lg text-body-lg text-on-surface-variant hover:text-primary transition-all duration-500 hover:tracking-widest" href="#">LinkedIn</a>
+<a class="font-body-lg text-body-lg text-on-surface-variant hover:text-primary transition-all duration-500 hover:tracking-widest" href="#">GitHub</a>
+<a class="font-body-lg text-body-lg text-on-surface-variant hover:text-primary transition-all duration-500 hover:tracking-widest" href="#">X</a>
+<a class="font-body-lg text-body-lg text-on-surface-variant hover:text-primary transition-all duration-500 hover:tracking-widest" href="#">Email</a>
+</div>
+<p class="font-mono-label text-mono-label text-on-surface-variant/50">©2024 AETHER AUTOMATION SEQUENCE</p>
+</footer>
+<script>
+        // Simple scroll reveal
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body></html>

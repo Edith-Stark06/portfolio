@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aetheric Foundry - Architecture &amp; Artifacts</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-tint": "#b4c5ff",
+                    "on-error": "#690005",
+                    "tertiary": "#c6c6c7",
+                    "secondary-fixed": "#7ff4ff",
+                    "tertiary-fixed": "#e2e2e2",
+                    "primary": "#b4c5ff",
+                    "on-primary": "#002979",
+                    "secondary-fixed-dim": "#4bd9e5",
+                    "error-container": "#93000a",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "on-surface": "#e2e2e2",
+                    "on-secondary-fixed": "#002022",
+                    "surface-bright": "#393939",
+                    "surface-container-highest": "#353535",
+                    "on-tertiary-container": "#f4f4f4",
+                    "inverse-on-surface": "#303030",
+                    "on-secondary-container": "#004347",
+                    "on-background": "#e2e2e2",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "outline": "#8c90a2",
+                    "surface-container-low": "#1b1b1b",
+                    "primary-fixed": "#dbe1ff",
+                    "on-secondary": "#00363b",
+                    "on-primary-container": "#f3f3ff",
+                    "surface-container-high": "#2a2a2a",
+                    "surface": "#131313",
+                    "on-primary-fixed": "#00174c",
+                    "on-secondary-fixed-variant": "#004f55",
+                    "inverse-primary": "#0052dd",
+                    "on-primary-fixed-variant": "#003da9",
+                    "primary-container": "#0f62fe",
+                    "on-error-container": "#ffdad6",
+                    "error": "#ffb4ab",
+                    "surface-container": "#1f1f1f",
+                    "outline-variant": "#424656",
+                    "surface-dim": "#131313",
+                    "inverse-surface": "#e2e2e2",
+                    "background": "#131313",
+                    "surface-container-lowest": "#0e0e0e",
+                    "surface-variant": "#353535",
+                    "secondary-container": "#02b7c3",
+                    "on-tertiary": "#2f3131",
+                    "tertiary-fixed-dim": "#c6c6c7",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "on-surface-variant": "#c3c6d8",
+                    "tertiary-container": "#6e7070",
+                    "secondary": "#4bd9e5"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "section-gap": "160px",
+                    "container-max": "1440px",
+                    "margin-mobile": "20px",
+                    "margin-desktop": "80px",
+                    "gutter": "24px",
+                    "bento-gap": "16px"
+            },
+            "fontFamily": {
+                    "headline-md": [
+                            "Plus Jakarta Sans"
+                    ],
+                    "display-hero-mobile": [
+                            "Plus Jakarta Sans"
+                    ],
+                    "display-hero": [
+                            "Plus Jakarta Sans"
+                    ],
+                    "body-lg": [
+                            "Inter"
+                    ],
+                    "headline-lg": [
+                            "Plus Jakarta Sans"
+                    ],
+                    "mono-label": [
+                            "JetBrains Mono"
+                    ],
+                    "body-md": [
+                            "Inter"
+                    ]
+            },
+            "fontSize": {
+                    "headline-md": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "display-hero-mobile": [
+                            "64px",
+                            {
+                                    "lineHeight": "60px",
+                                    "letterSpacing": "-0.04em",
+                                    "fontWeight": "800"
+                            }
+                    ],
+                    "display-hero": [
+                            "140px",
+                            {
+                                    "lineHeight": "120px",
+                                    "letterSpacing": "-0.05em",
+                                    "fontWeight": "800"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "27px",
+                                    "letterSpacing": "0",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "56px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "mono-label": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "letterSpacing": "0",
+                                    "fontWeight": "400"
+                            }
+                    ]
+            }
+          },
+        }
+      }
+    </script>
+<style>
+        /* Film Grain Texture */
+        .film-grain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.04;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+        
+        /* Glassmorphism Utilities */
+        .glass-panel {
+            background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, transparent 100%);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Subtle Inner Glow */
+        .inner-glow-top {
+            box-shadow: inset 0 1px 0 0 rgba(255,255,255,0.1);
+        }
+
+        /* Luminous Glow for primary buttons/accents */
+        .glow-aura {
+            box-shadow: 0 0 40px rgba(15, 98, 254, 0.2);
+        }
+        
+        .glow-aura-cyan {
+            box-shadow: 0 0 40px rgba(2, 183, 195, 0.15);
+        }
+
+        /* AI Pulse */
+        @keyframes pulse-cyan {
+            0% { box-shadow: 0 0 0 0 rgba(0, 183, 195, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(0, 183, 195, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 183, 195, 0); }
+        }
+        .ai-pulse-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #02b7c3;
+            border-radius: 50%;
+            animation: pulse-cyan 2s infinite;
+        }
+
+        /* Vertical Text */
+        .vertical-text {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            transform: rotate(180deg);
+        }
+
+        /* Lens Focus Entrance */
+        .lens-focus-in {
+            animation: lensFocus 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+            filter: blur(10px);
+            transform: scale(1.05);
+        }
+        
+        @keyframes lensFocus {
+            to {
+                opacity: 1;
+                filter: blur(0);
+                transform: scale(1);
+            }
+        }
+        
+        /* Smooth Scroll */
+        html { scroll-behavior: smooth; }
+        body { overflow-x: hidden; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased min-h-screen selection:bg-primary-container selection:text-white">
+<div class="film-grain"></div>
+<!-- Navigation Shell (TopAppBar) -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-desktop py-6 bg-surface/10 backdrop-blur-xl border-b border-white/10 hidden md:flex flat no shadows transition-all duration-300">
+<div class="font-headline-md text-headline-md font-bold text-on-surface tracking-tighter">
+            Aetheric Foundry
+        </div>
+<div class="flex items-center space-x-8">
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300" href="#">Home</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300" href="#">Journey</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300" href="#">Research</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 hover:text-primary transition-colors duration-300" href="#">Projects</a>
+</div>
+<div>
+<button class="bg-primary-container text-white font-mono-label text-mono-label uppercase tracking-widest px-6 py-3 rounded-full inner-glow-top glow-aura hover:opacity-80 scale-95 transition-all duration-300 flex items-center">
+                Connect
+                <span class="material-symbols-outlined ml-2" style="font-size: 16px;">arrow_forward</span>
+</button>
+</div>
+</nav>
+<!-- Bottom Nav (Mobile) -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-margin-mobile py-4 bg-surface/20 backdrop-blur-2xl border-t border-white/5 md:hidden">
+<a class="flex flex-col items-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-mono-label text-[10px]">Home</span>
+</a>
+<a class="flex flex-col items-center text-primary" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">dataset</span>
+<span class="font-mono-label text-[10px] font-bold">Projects</span>
+</a>
+<a class="flex flex-col items-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined mb-1">mail</span>
+<span class="font-mono-label text-[10px]">Connect</span>
+</a>
+</nav>
+<main class="max-w-[container-max] mx-auto px-margin-mobile md:px-margin-desktop pt-32 md:pt-48 pb-section-gap">
+<!-- Hero Section -->
+<section class="min-h-[614px] flex flex-col justify-center mb-section-gap relative">
+<div class="absolute -left-20 top-0 h-full hidden xl:flex items-center">
+<span class="vertical-text font-mono-label text-mono-label text-tertiary tracking-[0.2em] opacity-40">00 // INITIATION</span>
+</div>
+<div class="max-w-5xl lens-focus-in">
+<div class="flex items-center space-x-3 mb-6">
+<div class="ai-pulse-dot"></div>
+<span class="font-mono-label text-mono-label text-secondary tracking-widest uppercase">System Online</span>
+</div>
+<h1 class="font-display-hero-mobile text-display-hero-mobile md:font-display-hero md:text-display-hero text-on-surface mb-8">
+                    Architecture &amp;<br/><span class="text-surface-variant line-through opacity-80 decoration-primary decoration-4">Design</span> Artifacts
+                </h1>
+<p class="font-mono-label text-body-md text-on-surface-variant max-w-2xl border-l-2 border-outline-variant pl-6">
+                    [ SYS.LOG ]: Initiating retrieval of structural blueprints and automated pipelines. Focus parameters: Deep Learning architectures, Distributed Ledgers, and High-Performance Compute frameworks engineered by Ramana Sree K V.
+                </p>
+</div>
+</section>
+<!-- Project 1: Full Width Dense -->
+<section class="mb-section-gap relative">
+<div class="absolute -left-20 top-0 h-full hidden xl:flex items-start pt-10">
+<span class="vertical-text font-mono-label text-mono-label text-tertiary tracking-[0.2em] opacity-40">01 // ENTERPRISE NLP</span>
+</div>
+<div class="glass-panel rounded-xl overflow-hidden glow-aura-cyan transition-all duration-700 hover:border-secondary/30 relative">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-0">
+<!-- Left: Technical Specs -->
+<div class="col-span-1 md:col-span-5 p-8 md:p-12 border-b md:border-b-0 md:border-r border-white/10 flex flex-col justify-between bg-surface-container-lowest/50">
+<div>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="px-3 py-1 border border-outline-variant rounded-full font-mono-label text-[10px] text-tertiary">Python</span>
+<span class="px-3 py-1 border border-outline-variant rounded-full font-mono-label text-[10px] text-tertiary">FastAPI</span>
+<span class="px-3 py-1 border border-outline-variant rounded-full font-mono-label text-[10px] text-tertiary">LangChain</span>
+<span class="px-3 py-1 border border-outline-variant rounded-full font-mono-label text-[10px] text-tertiary">ChromaDB</span>
+<span class="px-3 py-1 border border-outline-variant rounded-full font-mono-label text-[10px] text-tertiary">Tree-sitter</span>
+</div>
+<h2 class="font-headline-md text-headline-md md:font-headline-lg md:text-headline-lg text-on-surface mb-6">
+                                AI-Powered Enterprise Code Analysis
+                            </h2>
+<div class="space-y-6">
+<div class="border-t border-white/5 pt-4">
+<h3 class="font-mono-label text-mono-label text-secondary mb-2 uppercase tracking-widest">Pipeline Architecture</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Advanced RAG pipeline implementing hierarchical chunking via Tree-sitter for syntax-aware code embeddings. Vector space mapping utilizing ChromaDB for semantic retrieval across monolithic codebases.</p>
+</div>
+<div class="border-t border-white/5 pt-4">
+<h3 class="font-mono-label text-mono-label text-secondary mb-2 uppercase tracking-widest">Workflow Automation</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Asynchronous FastAPI layer orchestrating parallel LLM inferencing. Streamlit interface providing real-time telemetry on syntax tree traversals and automated refactoring suggestions.</p>
+</div>
+</div>
+</div>
+<div class="mt-12">
+<a class="inline-flex items-center text-primary font-mono-label text-mono-label uppercase tracking-widest hover:text-white transition-colors group" href="#">
+                                Access Repository <span class="material-symbols-outlined ml-2 transform group-hover:translate-x-1 transition-transform">arrow_outward</span>
+</a>
+</div>
+</div>
+<!-- Right: Abstract Visual -->
+<div class="col-span-1 md:col-span-7 relative min-h-[400px] bg-black">
+<div class="absolute inset-0 bg-cover bg-center opacity-80" data-alt="Enterprise Architecture Background for Projects. Technical blueprint with floating architecture diagrams and CAD-inspired overlays." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA2x0JEThcV3IdEbptoirkebC2F1Sl4ZjT32mxsRqcualz1Eu3-T0Pctihwl0oM38Dio_X_mAlW9Wp_oFtsJkvpYR5NQFmRHQhCSlYoDK3VuhSZbcGXkjDGRJtThGTgk-k1ET6WIkQjKlaQTa5RR5np9XeoX43nFVtty9xq9UScqYDuttFMxwsE1lG36Xv_mvjIEPqm5D0Uf8kfcx2C7m6Zas6YNZOlTSxDU6d8ksSDmeaJ3dq-sdbjGg')">
+</div>
+<!-- Gradient Overlay -->
+<div class="absolute inset-0 bg-gradient-to-r from-surface-container-lowest/80 to-transparent md:block hidden"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 to-transparent md:hidden block"></div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full flex flex-col items-center justify-center space-y-gutter px-margin-desktop py-section-gap bg-surface-container-lowest flat no shadows">
+<div class="font-headline-lg text-headline-lg font-black text-on-surface mb-8">
+            Aetheric Foundry
+        </div>
+<div class="flex space-x-8">
+<a class="text-on-surface-variant hover:text-secondary-fixed transition-all duration-500 hover:tracking-widest font-mono-label text-mono-label uppercase" href="#">Twitter</a>
+<a class="text-on-surface-variant hover:text-secondary-fixed transition-all duration-500 hover:tracking-widest font-mono-label text-mono-label uppercase" href="#">GitHub</a>
+<a class="text-on-surface-variant hover:text-secondary-fixed transition-all duration-500 hover:tracking-widest font-mono-label text-mono-label uppercase" href="#">LinkedIn</a>
+<a class="text-on-surface-variant hover:text-secondary-fixed transition-all duration-500 hover:tracking-widest font-mono-label text-mono-label uppercase" href="#">ResearchGate</a>
+</div>
+<div class="text-on-surface-variant font-mono-label text-mono-label mt-12 opacity-50">
+            © 2024 Aetheric Foundry. Engineered for the Future.
+        </div>
+</footer>
+<script>
+        // Simple entrance animation intersection observer
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('lens-focus-in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('section').forEach(section => {
+                if(!section.querySelector('.lens-focus-in')) {
+                     section.style.opacity = '0';
+                     observer.observe(section);
+                }
+            });
+        });
+    </script>
+</body></html>

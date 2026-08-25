@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AETHER_ENG - Terminal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=JetBrains+Mono:wght@500;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#f4f4f4",
+                        "on-primary": "#002979",
+                        "on-secondary-container": "#004347",
+                        "on-primary-fixed": "#00174c",
+                        "primary-container": "#0f62fe",
+                        "surface-variant": "#353535",
+                        "secondary-fixed": "#7ff4ff",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "error-container": "#93000a",
+                        "on-error": "#690005",
+                        "on-surface-variant": "#c3c6d8",
+                        "on-surface": "#e2e2e2",
+                        "surface-container-high": "#2a2a2a",
+                        "inverse-surface": "#e2e2e2",
+                        "surface-bright": "#393939",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "primary": "#b4c5ff",
+                        "surface-container": "#1f1f1f",
+                        "background": "#131313",
+                        "surface-container-low": "#1b1b1b",
+                        "on-secondary-fixed-variant": "#004f55",
+                        "outline": "#8c90a2",
+                        "primary-fixed": "#dbe1ff",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "secondary-container": "#02b7c3",
+                        "surface-tint": "#b4c5ff",
+                        "outline-variant": "#424656",
+                        "surface-container-highest": "#353535",
+                        "inverse-on-surface": "#303030",
+                        "tertiary-fixed": "#e2e2e2",
+                        "on-secondary-fixed": "#002022",
+                        "on-error-container": "#ffdad6",
+                        "surface": "#131313",
+                        "on-tertiary": "#2f3131",
+                        "tertiary": "#c6c6c7",
+                        "secondary": "#4bd9e5",
+                        "on-background": "#e2e2e2",
+                        "inverse-primary": "#0052dd",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "secondary-fixed-dim": "#4bd9e5",
+                        "surface-container-lowest": "#0e0e0e",
+                        "error": "#ffb4ab",
+                        "surface-dim": "#131313",
+                        "on-primary-fixed-variant": "#003da9",
+                        "on-primary-container": "#f3f3ff",
+                        "tertiary-container": "#6e7070",
+                        "on-secondary": "#00363b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "bento-gap": "16px",
+                        "container-max": "1440px",
+                        "section-gap": "160px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "80px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "display-hero-mobile": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"],
+                        "mono-label": ["JetBrains Mono"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "display-hero": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "display-hero-mobile": ["64px", { "lineHeight": "60px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "27px", "letterSpacing": "0", "fontWeight": "400" }],
+                        "mono-label": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "display-hero": ["140px", { "lineHeight": "120px", "letterSpacing": "-0.05em", "fontWeight": "800" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400" }],
+                        "headline-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Extreme Cinematic Film Grain */
+        .film-grain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.15;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            mix-blend-mode: overlay;
+        }
+
+        /* Heavy CRT Scanlines */
+        .scanlines {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 9998;
+            background: linear-gradient(
+                to bottom,
+                rgba(255,255,255,0),
+                rgba(255,255,255,0) 50%,
+                rgba(0,0,0,0.2) 50%,
+                rgba(0,0,0,0.2)
+            );
+            background-size: 100% 4px;
+            opacity: 0.4;
+        }
+
+        /* Blinking Cursor */
+        .cursor-blink {
+            animation: blink 1s step-end infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* Glitch / Decrypt Effect styles handled via JS */
+        
+        /* Ensure viewport lock */
+        body {
+            overflow: hidden;
+            background-color: #131313; /* Use config background */
+        }
+        
+        /* Boot sequence overlay */
+        #boot-screen {
+            position: fixed;
+            inset: 0;
+            background: #131313;
+            z-index: 10000;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 24px;
+            font-family: 'JetBrains Mono', monospace;
+            color: #b4c5ff; /* primary */
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background h-screen w-screen relative font-mono-label flex items-center justify-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCBFDJto5tsB-rNAOzL3TouGvwQiWBinBao8nuX7dkRAqrdDe1Mmbao8lEMDLAM1G4xLZadsfI89tNuHRuXRCsu7m9kNd4N4S5zJUxTSnboDHYeVTSMa3wSSVRQSLA0QIJX3NiAZ4e0kYDpEPbbFDReTsBwLFhWQlVVBdhw57SPLWvgTfe-r5sZd6oa101WYO2b1_UOwWgjCwq1CktEBrcRjSA3CH2SRGF-xsyJ-dP-DQmCt1NGRCOcLg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+<!-- Global Overlays -->
+<div class="film-grain"></div>
+<div class="scanlines"></div>
+<!-- Boot Sequence Overlay -->
+<div id="boot-screen">
+<div id="boot-log"></div>
+</div>
+<!-- Top Navigation (Suppressed for this dead-end terminal screen as per rules, but keeping a minimal structure if needed. Leaving out TopNavBar component completely to prioritize canvas.) -->
+<!-- Main Terminal Canvas -->
+<main class="relative z-10 flex flex-col items-center justify-center w-full max-w-container-max px-margin-mobile md:px-margin-desktop">
+<!-- Initiation Sequence -->
+<div class="text-center mb-16">
+<h1 class="text-primary font-mono-label text-[24px] md:text-[32px] tracking-widest font-bold uppercase" style="text-shadow: 0 0 10px rgba(180, 197, 255, 0.3);">
+                INITIATE_SEQUENCE<span class="cursor-blink">_</span>
+</h1>
+</div>
+<!-- Action Nodes -->
+<div class="flex flex-col gap-6 items-center">
+<a class="group flex items-center text-on-surface-variant hover:text-secondary transition-colors duration-300 font-mono-label text-[14px] md:text-[16px] tracking-widest" href="#">
+<span class="opacity-50 group-hover:opacity-100 transition-opacity mr-2">[</span>
+                GITHUB
+                <span class="opacity-50 group-hover:opacity-100 transition-opacity ml-2">]</span>
+</a>
+<a class="group flex items-center text-on-surface-variant hover:text-secondary transition-colors duration-300 font-mono-label text-[14px] md:text-[16px] tracking-widest" href="#">
+<span class="opacity-50 group-hover:opacity-100 transition-opacity mr-2">[</span>
+                LINKEDIN
+                <span class="opacity-50 group-hover:opacity-100 transition-opacity ml-2">]</span>
+</a>
+<a class="decrypt-link group flex items-center text-on-surface-variant hover:text-secondary transition-colors duration-300 font-mono-label text-[14px] md:text-[16px] tracking-widest relative overflow-hidden" data-value="SECURE COMM: EMAIL" href="mailto:ramanarobotech@gmail.com">
+<span class="opacity-50 group-hover:opacity-100 transition-opacity mr-2">[</span>
+<span class="decrypt-text">SECURE COMM: EMAIL</span>
+<span class="opacity-50 group-hover:opacity-100 transition-opacity ml-2">]</span>
+</a>
+</div>
+</main>
+<!-- Footer / System Coords -->
+<footer class="absolute bottom-0 left-0 w-full p-6 flex justify-between items-end z-10 text-surface-variant font-mono-label text-[10px] uppercase pointer-events-none">
+<div>
+<div>SYS.LOC // 37.7749° N, 122.4194° W</div>
+<div id="sys-time">TIME // 00:00:00:000</div>
+</div>
+<div class="text-right">
+<div>AETHER_ENG v1.0.4</div>
+<div>STATUS: ONLINE</div>
+</div>
+</footer>
+<script>
+        // System Time Update
+        function updateTime() {
+            const now = new Date();
+            const h = String(now.getHours()).padStart(2, '0');
+            const m = String(now.getMinutes()).padStart(2, '0');
+            const s = String(now.getSeconds()).padStart(2, '0');
+            const ms = String(now.getMilliseconds()).padStart(3, '0');
+            document.getElementById('sys-time').textContent = `TIME // ${h}:${m}:${s}:${ms}`;
+            requestAnimationFrame(updateTime);
+        }
+        updateTime();
+
+        // Hover Decrypt Effect
+        const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()";
+        const decryptLinks = document.querySelectorAll('.decrypt-link');
+
+        decryptLinks.forEach(link => {
+            const textElement = link.querySelector('.decrypt-text');
+            const originalText = link.dataset.value;
+            let interval = null;
+
+            link.addEventListener('mouseenter', () => {
+                let iteration = 0;
+                clearInterval(interval);
+                
+                interval = setInterval(() => {
+                    textElement.innerText = originalText
+                        .split("")
+                        .map((letter, index) => {
+                            if(index < iteration) {
+                                return originalText[index];
+                            }
+                            return letters[Math.floor(Math.random() * letters.length)];
+                        })
+                        .join("");
+                    
+                    if(iteration >= originalText.length){
+                        clearInterval(interval);
+                    }
+                    
+                    iteration += 1 / 3;
+                }, 30);
+            });
+            
+            link.addEventListener('mouseleave', () => {
+                clearInterval(interval);
+                textElement.innerText = originalText;
+            });
+        });
+
+        // Boot Sequence Animation
+        const bootScreen = document.getElementById('boot-screen');
+        const bootLog = document.getElementById('boot-log');
+        const bootMessages = [
+            "INITIALIZING AETHER AUTOMATION SEQUENCE...",
+            "LOADING KERNEL MODULES... OK",
+            "MOUNTING VIRTUAL FILE SYSTEM... OK",
+            "ESTABLISHING SECURE CONNECTION...",
+            "HANDSHAKE PROTOCOL: ACCEPTED",
+            "DECRYPTING PAYLOAD...",
+            "ACCESS GRANTED."
+        ];
+
+        let msgIndex = 0;
+        function printBootMessage() {
+            if (msgIndex < bootMessages.length) {
+                const msg = document.createElement('div');
+                msg.textContent = `> ${bootMessages[msgIndex]}`;
+                bootLog.appendChild(msg);
+                msgIndex++;
+                setTimeout(printBootMessage, Math.random() * 200 + 100);
+            } else {
+                setTimeout(() => {
+                    bootScreen.style.opacity = '0';
+                    bootScreen.style.transition = 'opacity 0.5s ease';
+                    setTimeout(() => {
+                        bootScreen.style.display = 'none';
+                    }, 500);
+                }, 500);
+            }
+        }
+        
+        // Start boot sequence on load
+        window.onload = () => {
+            setTimeout(printBootMessage, 500);
+        };
+
+    </script>
+</body></html>

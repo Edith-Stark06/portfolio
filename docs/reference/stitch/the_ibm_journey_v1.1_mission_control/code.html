@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>IBM Journey - Ramana Sree K V</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        /* Film Grain Texture */
+        .film-grain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.04;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+
+        /* Timeline Spine */
+        .timeline-spine {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1px;
+            background: linear-gradient(to bottom, transparent, rgba(15, 98, 254, 0.8), transparent);
+            box-shadow: 0 0 20px rgba(15, 98, 254, 0.5);
+            z-index: 0;
+        }
+
+        /* Glassmorphism Classes */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Glow effects */
+        .glow-blue {
+            box-shadow: 0 0 60px rgba(15, 98, 254, 0.2);
+        }
+        
+        .text-glow {
+            text-shadow: 0 0 30px rgba(15, 98, 254, 0.5);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#000000", /* Pitch black override for cinematic feel */
+                        "inverse-surface": "#e2e2e2",
+                        "tertiary-container": "#6e7070",
+                        "secondary-fixed": "#7ff4ff",
+                        "on-secondary": "#00363b",
+                        "on-primary-container": "#f3f3ff",
+                        "on-secondary-fixed-variant": "#004f55",
+                        "surface-container-highest": "#353535",
+                        "on-tertiary-container": "#f4f4f4",
+                        "inverse-on-surface": "#303030",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "outline-variant": "#424656",
+                        "surface-container-low": "#1b1b1b",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "error": "#ffb4ab",
+                        "surface": "#131313",
+                        "error-container": "#93000a",
+                        "surface-container-lowest": "#0e0e0e",
+                        "secondary-fixed-dim": "#4bd9e5",
+                        "on-surface-variant": "#c3c6d8",
+                        "secondary-container": "#02b7c3",
+                        "surface-variant": "#353535",
+                        "surface-dim": "#131313",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "primary-container": "#0f62fe",
+                        "outline": "#8c90a2",
+                        "on-primary-fixed-variant": "#003da9",
+                        "tertiary-fixed": "#e2e2e2",
+                        "surface-bright": "#393939",
+                        "secondary": "#4bd9e5",
+                        "surface-tint": "#b4c5ff",
+                        "on-primary-fixed": "#00174c",
+                        "tertiary": "#c6c6c7",
+                        "primary-fixed": "#dbe1ff",
+                        "surface-container-high": "#2a2a2a",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "inverse-primary": "#0052dd",
+                        "on-surface": "#e2e2e2",
+                        "primary": "#0f62fe", /* Forced to IBM Blue for accents */
+                        "on-primary": "#ffffff",
+                        "on-secondary-container": "#004347",
+                        "surface-container": "#1f1f1f",
+                        "on-background": "#e2e2e2",
+                        "on-tertiary": "#2f3131",
+                        "on-secondary-fixed": "#002022"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap": "160px",
+                        "bento-gap": "16px",
+                        "margin-desktop": "80px",
+                        "gutter": "24px",
+                        "margin-mobile": "20px",
+                        "container-max": "1440px"
+                    },
+                    "fontFamily": {
+                        "display-hero": ["Plus Jakarta Sans"],
+                        "mono-label": ["JetBrains Mono"],
+                        "display-hero-mobile": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-hero": ["140px", { "lineHeight": "120px", "letterSpacing": "-0.05em", "fontWeight": "800" }],
+                        "mono-label": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "display-hero-mobile": ["64px", { "lineHeight": "60px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "27px", "letterSpacing": "0", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background antialiased overflow-x-hidden min-h-screen relative">
+<div class="film-grain"></div>
+<!-- TopNavBar from JSON -->
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-white/10 flex justify-between items-center px-margin-desktop py-6 max-w-container-max mx-auto md:px-margin-desktop px-margin-mobile">
+<a class="font-mono-label text-mono-label font-bold tracking-tighter text-primary uppercase" href="#">
+            AETHER_ENG
+        </a>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">About</a>
+<a class="font-body-md text-body-md text-primary font-bold border-b border-primary pb-1 scale-95 transition-transform" href="#">Journey</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Research</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Projects</a>
+</div>
+<button class="bg-primary text-on-primary font-body-md text-body-md font-bold uppercase px-6 py-3 rounded-full glow-blue hover:brightness-110 transition-all">
+            Hire Me
+        </button>
+</nav>
+<!-- Timeline Spine spanning the page content -->
+<div class="timeline-spine h-full top-0"></div>
+<main class="relative z-10 flex flex-col items-center">
+<!-- Hero Section -->
+<section class="min-h-screen flex flex-col justify-center items-center text-center px-margin-desktop py-section-gap w-full max-w-container-max relative">
+<div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/10 via-background to-background -z-10" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBHJimem6UiGrNFXU3Ort5atocdVPJBD5o7HSqQ_8_JHPT_U8IJEkF7_aJm_hlbcIDFy8_aB9gST53DvkYwiVE8K0wwjg1KtLHeSB-vOcItE3_VtjMDvbIOFnm21jwOHEccUDmcbaDavgyeeIaj56XiyHsLGmegBeCj330xt87X89z4jS-kgHKpx5P0PD7VgDBWWXRlprYFAIpKmA5Jaoaq51xs7ICjxBHcgRVdhYEKdZjweFJrLuJPvA'); background-size: cover; background-position: center; background-repeat: no-repeat;"><div class="absolute inset-0 bg-background/60 backdrop-blur-[2px]"></div></div>
+<p class="font-mono-label text-mono-label text-primary uppercase mb-8 tracking-widest">[ SYS_INIT: IBM_JOURNEY ]</p>
+<h1 class="font-display-hero-mobile md:font-display-hero text-display-hero-mobile md:text-display-hero text-on-background mb-6 text-glow">
+                The IBM<br/>Journey
+            </h1>
+<p class="font-headline-md text-headline-md text-on-surface-variant max-w-3xl mb-12">
+                From Z Xplore to the Global Stage
+            </p>
+<div class="relative w-64 h-64 md:w-96 md:h-96 glow-blue rounded-full flex items-center justify-center p-1 bg-gradient-to-br from-primary/40 to-transparent">
+<div class="absolute inset-0 rounded-full border border-primary/30 animate-pulse"></div>
+<img class="w-full h-full object-contain drop-shadow-2xl z-10 relative rounded-full bg-surface-container-lowest" data-alt="A highly detailed, 3D rendered graphic of an IBM Champion 2025 badge. The badge is metallic silver and electric blue, floating in a dark, atmospheric void. Lighting is cinematic and sharp, highlighting the intricate technological textures and etched typography on the badge. The style is hyper-realistic, premium, and futuristic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBE4oEfdwfHBJ6XUXr2VsSlnrHxXMOJnLpQJvnKmbSQf3HoWdvDz1sPnGVzq9Vt9pH-ZI0OQzbsjMsT4EjR5-2vU_jANuB21oOA8x8UD1IrxmjjdU7-moUcCz--9gX2dbUppOONjp1G8xvBeCGFcyFQUrJKS_MPCNAhoHvqc1jpLW2-GGJ4i9udzhVw4ZJh_woqdeYuZa5g7RHG1TWxTWhTY-cSsdr77kcxkAC-T4bU6kKNP3bf8mprIA"/>
+</div>
+</section>
+<!-- The Crown Jewels (Bento Grid) -->
+<section class="w-full max-w-container-max px-margin-mobile md:px-margin-desktop py-section-gap relative z-10 bg-background">
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-16 text-center">The Crown Jewels</h2>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-bento-gap">
+<!-- Card 1 -->
+<div class="md:col-span-4 glass-panel rounded-xl p-8 flex flex-col justify-between aspect-square relative overflow-hidden group hover:bg-white/5 transition-all">
+<div class="absolute top-0 right-0 p-6 opacity-20 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary text-6xl" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<div>
+<p class="font-mono-label text-mono-label text-on-surface-variant mb-4 uppercase">[ ACC: 01 ]</p>
+<h3 class="font-headline-md text-headline-md text-on-background">IBM Champion</h3>
+</div>
+<div>
+<p class="font-body-lg text-body-lg text-primary font-bold">2025 &amp; 2026</p>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Recognized globally for exceptional advocacy and expertise in IBM technologies.</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="md:col-span-4 glass-panel rounded-xl p-8 flex flex-col justify-between aspect-square relative overflow-hidden group hover:bg-white/5 transition-all">
+<div class="absolute top-0 right-0 p-6 opacity-20 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary text-6xl" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
+</div>
+<div>
+<p class="font-mono-label text-mono-label text-on-surface-variant mb-4 uppercase">[ ACC: 02 ]</p>
+<h3 class="font-headline-md text-headline-md text-on-background">Z Superstar</h3>
+</div>
+<div>
+<p class="font-body-lg text-body-lg text-primary font-bold">Ambassador</p>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Leading the charge in modernizing enterprise applications on the mainframe.</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="md:col-span-4 glass-panel rounded-xl p-8 flex flex-col justify-between aspect-square relative overflow-hidden group hover:bg-white/5 transition-all">
+<div class="absolute top-0 right-0 p-6 opacity-20 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary text-6xl" style="font-variation-settings: 'FILL' 1;">emoji_events</span>
+</div>
+<div>
+<p class="font-mono-label text-mono-label text-on-surface-variant mb-4 uppercase">[ ACC: 03 ]</p>
+<h3 class="font-headline-md text-headline-md text-on-background">Activation Challenges</h3>
+</div>
+<div>
+<p class="font-body-lg text-body-lg text-primary font-bold">Prize Winner</p>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Demonstrated technical mastery in high-stakes enterprise problem-solving.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer from JSON -->
+<footer class="w-full relative py-section-gap bg-background flex flex-col items-center justify-center px-margin-desktop text-center mt-32 z-10 border-t border-white/5">
+<h2 class="font-display-hero-mobile md:font-display-hero text-display-hero-mobile md:text-display-hero uppercase text-on-background mb-12">
+            Explore IBM Z
+        </h2>
+<div class="flex gap-8 mb-16">
+<a class="font-body-lg text-body-lg text-on-surface-variant hover:text-primary transition-all duration-500 hover:tracking-widest uppercase tracking-wide" href="#">LinkedIn</a>
+<a class="font-body-lg text-body-lg text-on-surface-variant hover:text-primary transition-all duration-500 hover:tracking-widest uppercase tracking-wide" href="#">GitHub</a>
+<a class="font-body-lg text-body-lg text-on-surface-variant hover:text-primary transition-all duration-500 hover:tracking-widest uppercase tracking-wide" href="#">X</a>
+<a class="font-body-lg text-body-lg text-on-surface-variant hover:text-primary transition-all duration-500 hover:tracking-widest uppercase tracking-wide" href="#">Email</a>
+</div>
+<p class="font-mono-label text-mono-label text-on-surface-variant uppercase tracking-widest">
+            ©2024 AETHER AUTOMATION SEQUENCE
+        </p>
+</footer>
+</body></html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Journey - RAMANA SREE K V</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Config -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#353535",
+                        "outline": "#8c90a2",
+                        "inverse-surface": "#e2e2e2",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "secondary": "#4bd9e5",
+                        "background": "#131313",
+                        "error-container": "#93000a",
+                        "tertiary": "#c6c6c7",
+                        "outline-variant": "#424656",
+                        "inverse-on-surface": "#303030",
+                        "on-background": "#e2e2e2",
+                        "on-primary-container": "#f3f3ff",
+                        "surface-container": "#1f1f1f",
+                        "primary-fixed": "#dbe1ff",
+                        "on-secondary-container": "#004347",
+                        "inverse-primary": "#0052dd",
+                        "on-primary": "#002979",
+                        "tertiary-fixed": "#e2e2e2",
+                        "surface-container-high": "#2a2a2a",
+                        "on-error-container": "#ffdad6",
+                        "on-surface-variant": "#c3c6d8",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-tertiary": "#2f3131",
+                        "tertiary-container": "#6e7070",
+                        "surface": "#131313",
+                        "primary": "#b4c5ff",
+                        "error": "#ffb4ab",
+                        "on-surface": "#e2e2e2",
+                        "surface-container-highest": "#353535",
+                        "on-secondary-fixed-variant": "#004f55",
+                        "on-primary-fixed-variant": "#003da9",
+                        "on-primary-fixed": "#00174c",
+                        "surface-container-low": "#1b1b1b",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-error": "#690005",
+                        "on-secondary": "#00363b",
+                        "surface-tint": "#b4c5ff",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "on-tertiary-container": "#f4f4f4",
+                        "surface-dim": "#131313",
+                        "surface-bright": "#393939",
+                        "secondary-container": "#02b7c3",
+                        "secondary-fixed": "#7ff4ff",
+                        "on-secondary-fixed": "#002022",
+                        "primary-container": "#0f62fe",
+                        "secondary-fixed-dim": "#4bd9e5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "80px",
+                        "section-gap": "160px",
+                        "gutter": "24px",
+                        "container-max": "1440px",
+                        "bento-gap": "16px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "mono-label": ["JetBrains Mono"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "display-hero": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"],
+                        "display-hero-mobile": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "mono-label": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "display-hero": ["140px", { "lineHeight": "120px", "letterSpacing": "-0.05em", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "27px", "letterSpacing": "0", "fontWeight": "400" }],
+                        "display-hero-mobile": ["64px", { "lineHeight": "60px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #000000; /* Pitch Black overriding background color for cinematic feel */
+            color: var(--color-on-surface);
+            position: relative;
+        }
+        /* Cinematic Film Grain Overlay */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            pointer-events: none;
+            background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noiseFilter)"/></svg>');
+            opacity: 0.04;
+            z-index: 50;
+        }
+
+        .timeline-line-container {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background-color: rgba(255,255,255,0.1);
+        }
+
+        .timeline-line-fill {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0%;
+            background-color: #0F62FE; /* IBM Blue */
+            transition: height 0.1s ease-out;
+            box-shadow: 0 0 20px 2px rgba(15, 98, 254, 0.4);
+        }
+
+        .timeline-node {
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .timeline-node.visible {
+            opacity: 1;
+            transform: translateX(10px); /* Slides 10px right as requested */
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -4px; /* Centered on 1px line */
+            top: 32px;
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background-color: #131313;
+            border: 1px solid #424656;
+            transition: all 0.4s ease;
+        }
+
+        .timeline-node.visible .timeline-dot {
+            background-color: #0F62FE;
+            border-color: #0F62FE;
+            box-shadow: 0 0 15px rgba(15, 98, 254, 0.5);
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDIbwEjwRDOEygPl675cFrgR5gRS4yIE0PWEArBB6TzDipYpDfSBQRBcEwKFHhtXZlRviefJd-MquLhJ41oXK3H3GZToJKztwtHeVk5xfX3hAcTKvp2jK73hfRurst-vYw4tno7G8eHHgxfUPgXzuyyEDyZsmqDNSLz-wtArBic21eNj7ZxCpIFY04BUV-QjBIZ6_AiE6c0x-7MpzxekwY2kyUPw7U5tkPuRjj4rbQ8AS--OxWyoEgRnw'); background-size: cover; background-position: center; background-attachment: fixed; background-repeat: no-repeat;">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-white/10 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-6 h-20">
+<a class="font-headline-md text-headline-md font-bold text-on-surface tracking-tighter" href="#">
+            RAMANA SREE K V
+        </a>
+<!-- Web Navigation -->
+<div class="hidden md:flex gap-8 items-center font-body-md text-body-md uppercase tracking-widest">
+<!-- Suppressed nav items based on logic, leaving active intent if any. No exact match for "The Journey", but it fits generic exploration. Hiding standard nav items as per strict instructions unless direct match. Since it's a portfolio timeline, we'll show the provided links but none are active -->
+<a class="text-on-surface-variant font-medium hover:text-secondary transition-colors duration-300" href="#">Modernization</a>
+<a class="text-on-surface-variant font-medium hover:text-secondary transition-colors duration-300" href="#">AI Systems</a>
+<a class="text-on-surface-variant font-medium hover:text-secondary transition-colors duration-300" href="#">Architecture</a>
+<a class="text-on-surface-variant font-medium hover:text-secondary transition-colors duration-300" href="#">Contact</a>
+</div>
+<button class="hidden md:inline-flex items-center justify-center px-6 py-2 bg-primary-container text-on-primary-container font-body-md font-bold uppercase rounded-full hover:scale-95 transition-transform duration-200 shadow-[0_0_40px_rgba(15,98,254,0.2)]">
+            Connect
+        </button>
+<!-- Mobile Menu Icon (simplified) -->
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">menu</span>
+</button>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-[160px] pb-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full relative z-10">
+<!-- Hero Section -->
+<header class="mb-[120px] max-w-4xl">
+<p class="font-mono-label text-mono-label text-secondary mb-6 tracking-[0.2em]">[ SYNCING CAREER MILESTONES ]</p>
+<h1 class="font-display-hero-mobile md:font-display-hero text-display-hero-mobile md:text-display-hero text-on-surface">
+                The Architecture<br/>of Progress.
+            </h1>
+</header>
+<!-- Timeline Layout -->
+<section class="relative ml-2 md:ml-[120px] pl-12 pb-32 bg-transparent" id="timeline-container">
+<!-- The 1px IBM Blue Line -->
+<div class="timeline-line-container">
+<div class="timeline-line-fill" id="timeline-line"></div>
+</div>
+<!-- Nodes -->
+<div class="flex flex-col gap-24">
+<div class="timeline-node relative">
+<div class="timeline-dot"></div>
+<p class="font-mono-label text-mono-label text-outline mb-3">[ 2023 - 2027 ]</p>
+<h3 class="font-headline-md text-headline-md text-on-surface max-w-2xl">B.Tech Computer Science at VIT Chennai.</h3>
+</div>
+<div class="timeline-node relative">
+<div class="timeline-dot"></div>
+<p class="font-mono-label text-mono-label text-outline mb-3">[ AUG 2024 ]</p>
+<h3 class="font-headline-md text-headline-md text-on-surface max-w-2xl">IBM Z Student Ambassador <span class="text-primary">(Superstar Tier)</span>.</h3>
+</div>
+<div class="timeline-node relative">
+<div class="timeline-dot"></div>
+<p class="font-mono-label text-mono-label text-outline mb-3">[ 2025 &amp; 2026 ]</p>
+<h3 class="font-headline-md text-headline-md text-on-surface max-w-2xl">IBM Champion.</h3>
+</div>
+<div class="timeline-node relative">
+<div class="timeline-dot"></div>
+<p class="font-mono-label text-mono-label text-outline mb-3">[ MAY 2025 ]</p>
+<h3 class="font-headline-md text-headline-md text-on-surface max-w-2xl">Software Development Engineer Intern at Larsen &amp; Toubro <span class="text-surface-variant">(ERP Architecture)</span>.</h3>
+</div>
+<div class="timeline-node relative">
+<div class="timeline-dot"></div>
+<p class="font-mono-label text-mono-label text-outline mb-3">[ 2026 ]</p>
+<h3 class="font-headline-md text-headline-md text-on-surface max-w-2xl">IEEE Published Author <span class="text-surface-variant">(Alzheimer's Hybrid Model)</span>.</h3>
+</div>
+<div class="timeline-node relative">
+<div class="timeline-dot"></div>
+<p class="font-mono-label text-mono-label text-outline mb-3">[ JUN 2026 ]</p>
+<h3 class="font-headline-md text-headline-md text-on-surface max-w-2xl">Linux Foundation Open Mainframe Project Mentee.</h3>
+</div>
+<div class="timeline-node relative">
+<div class="timeline-dot"></div>
+<p class="font-mono-label text-mono-label text-secondary mb-3">[ CURRENT ]</p>
+<h3 class="font-headline-md text-headline-md text-on-surface max-w-2xl">Enterprise AI &amp; Mainframe Modernization.</h3>
+<!-- AI Status Indicator attached to current node -->
+<div class="mt-6 flex items-center gap-4">
+<div class="relative w-3 h-3">
+<div class="absolute inset-0 bg-secondary-container rounded-full animate-ping opacity-75"></div>
+<div class="absolute inset-0 bg-secondary-container rounded-full shadow-[0_0_20px_#02b7c3]"></div>
+</div>
+<span class="font-mono-label text-mono-label text-secondary tracking-widest">LIVE INITIATIVE</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="full-width py-section-gap border-t border-white/10 bg-surface-container-lowest flex flex-col items-center justify-center text-center px-margin-mobile md:px-margin-desktop w-full z-10 relative">
+<div class="flex flex-col md:flex-row gap-8 mb-12">
+<a class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface hover:text-primary hover:tracking-tighter transition-all duration-500" href="#">Explore Repositories?</a>
+<a class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface hover:text-primary hover:tracking-tighter transition-all duration-500" href="#">GitHub</a>
+<a class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface hover:text-primary hover:tracking-tighter transition-all duration-500" href="#">LinkedIn</a>
+<a class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface hover:text-primary hover:tracking-tighter transition-all duration-500" href="#">Documentation</a>
+</div>
+<p class="font-mono-label text-mono-label text-outline">© 2024 RAMANA SREE K V. ENGINEERED FOR SCALE.</p>
+</footer>
+<!-- Scroll Animation Logic -->
+<script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const container = document.getElementById("timeline-container");
+            const lineFill = document.getElementById("timeline-line");
+            const nodes = document.querySelectorAll(".timeline-node");
+
+            const updateTimeline = () => {
+                const rect = container.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+                
+                // Calculate how much of the timeline container has been scrolled past
+                // Offset by half screen to start filling when container is halfway up
+                const startOffset = windowHeight * 0.6; 
+                
+                let fillPercentage = 0;
+                
+                if (rect.top < startOffset) {
+                    const scrollDistance = startOffset - rect.top;
+                    fillPercentage = (scrollDistance / rect.height) * 100;
+                    fillPercentage = Math.min(Math.max(fillPercentage, 0), 100);
+                }
+                
+                lineFill.style.height = `${fillPercentage}%`;
+
+                // Calculate the actual pixel height of the filled line relative to the container
+                const filledPixels = (fillPercentage / 100) * rect.height;
+
+                // Check intersection for nodes
+                nodes.forEach(node => {
+                    // Node's position relative to the container top
+                    const nodeTop = node.offsetTop;
+                    // Trigger node when the line reaches its dot (offset slightly for effect)
+                    if (filledPixels > nodeTop + 20) {
+                        node.classList.add("visible");
+                    } else {
+                        node.classList.remove("visible");
+                    }
+                });
+            };
+
+            window.addEventListener("scroll", updateTimeline);
+            window.addEventListener("resize", updateTimeline);
+            
+            // Initial call
+            setTimeout(updateTimeline, 100);
+        });
+    </script>
+</body></html>

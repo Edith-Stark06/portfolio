@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Applied AI Research - ARCHITECT_OS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-background": "#e2e2e2",
+                        "inverse-on-surface": "#303030",
+                        "surface": "#131313",
+                        "on-secondary": "#00363b",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "secondary": "#4bd9e5",
+                        "surface-container-high": "#2a2a2a",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-tertiary-container": "#f4f4f4",
+                        "error": "#ffb4ab",
+                        "on-tertiary": "#2f3131",
+                        "on-primary-fixed": "#00174c",
+                        "primary-container": "#0f62fe",
+                        "surface-container-highest": "#353535",
+                        "primary": "#b4c5ff",
+                        "on-surface": "#e2e2e2",
+                        "surface-tint": "#b4c5ff",
+                        "error-container": "#93000a",
+                        "on-primary-fixed-variant": "#003da9",
+                        "inverse-primary": "#0052dd",
+                        "tertiary": "#c6c6c7",
+                        "on-secondary-fixed": "#002022",
+                        "surface-variant": "#353535",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "secondary-fixed-dim": "#4bd9e5",
+                        "outline-variant": "#424656",
+                        "secondary-container": "#02b7c3",
+                        "on-secondary-container": "#004347",
+                        "outline": "#8c90a2",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface-bright": "#393939",
+                        "primary-fixed": "#dbe1ff",
+                        "tertiary-fixed": "#e2e2e2",
+                        "background": "#131313",
+                        "on-primary-container": "#f3f3ff",
+                        "on-error": "#690005",
+                        "on-secondary-fixed-variant": "#004f55",
+                        "on-primary": "#002979",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-low": "#1b1b1b",
+                        "surface-container": "#1f1f1f",
+                        "on-surface-variant": "#c3c6d8",
+                        "inverse-surface": "#e2e2e2",
+                        "tertiary-container": "#6e7070",
+                        "surface-dim": "#131313",
+                        "secondary-fixed": "#7ff4ff"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px"
+                    },
+                    spacing: {
+                        "container-max": "1440px",
+                        "section-gap": "160px",
+                        "gutter": "24px",
+                        "margin-desktop": "80px",
+                        "bento-gap": "16px",
+                        "margin-mobile": "20px"
+                    },
+                    fontFamily: {
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "mono-label": ["JetBrains Mono"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "display-hero-mobile": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"],
+                        "display-hero": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"]
+                    },
+                    fontSize: {
+                        "headline-lg": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "mono-label": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "500" }],
+                        "headline-md": ["32px", { lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "600" }],
+                        "display-hero-mobile": ["64px", { lineHeight: "60px", letterSpacing: "-0.04em", fontWeight: "800" }],
+                        "body-lg": ["18px", { lineHeight: "27px", letterSpacing: "0", fontWeight: "400" }],
+                        "display-hero": ["140px", { lineHeight: "120px", letterSpacing: "-0.05em", fontWeight: "800" }],
+                        "body-md": ["16px", { lineHeight: "24px", letterSpacing: "0", fontWeight: "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        ::selection {
+            background-color: #02b7c3; /* secondary-container */
+            color: #131313; /* background */
+        }
+        
+        .bg-grain {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            opacity: 0.05;
+            pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+
+        .glass-panel {
+            background: rgba(19, 19, 19, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .glass-panel-gradient {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .glow-button {
+            position: relative;
+        }
+        
+        .glow-button::before {
+            content: '';
+            position: absolute;
+            inset: -20px;
+            background: #0f62fe;
+            filter: blur(40px);
+            opacity: 0.2;
+            z-index: -1;
+            border-radius: inherit;
+            transition: opacity 0.3s ease;
+        }
+        
+        .glow-button:hover::before {
+            opacity: 0.4;
+        }
+
+        /* Abstract structural styles for the background */
+        .bg-black-pure {
+            background-color: #000000;
+        }
+        
+        .archive-row {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .archive-row::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle 400px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.03), transparent);
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .archive-row:hover::before {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-black-pure text-on-background antialiased overflow-x-hidden selection:bg-secondary-container selection:text-background">
+<div class="bg-grain"></div>
+<!-- Top Navigation from Shared Components -->
+<nav class="fixed top-0 w-full backdrop-blur-xl border-b border-white/10 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-6 w-full z-50 bg-surface/10 scale-95 duration-200 ease-in-out hover:backdrop-blur-2xl hover:bg-white/5 transition-all duration-300">
+<div class="flex items-center gap-4">
+<span class="font-headline-md text-headline-md font-bold tracking-tighter text-on-surface">RESEARCH_CORE</span>
+</div>
+<div class="hidden md:flex items-center gap-8 font-body-md text-body-md uppercase tracking-widest">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#">ENGINEERING</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1" href="#">RESEARCH</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#">SYSTEMS</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#">ABOUT</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="font-body-md text-body-md uppercase tracking-widest text-primary hover:text-primary-fixed transition-colors border border-primary/30 px-6 py-2 rounded-full hover:bg-primary/10">
+                CONTACT
+            </button>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative min-h-[921px] flex flex-col justify-center items-center px-margin-mobile md:px-margin-desktop pt-32 pb-section-gap overflow-hidden"><div class="absolute inset-0 z-0 opacity-20 bg-cover bg-center pointer-events-none" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDdSttzVtOD6xbqRVQVBmUkoCEyLk9XQWi0e03_t0djKSShMPzxRc5cv9UF5ewljdR9pW_0oohSrlaiZtXCk8tWv3hjRiaca1K7trbZuKlzRYt7oLdKg2TeSk2NVJ_94Dcp1pISpTpXJFwd7jW9dji9noYc4P-lmTa1exbrPjzqT95sWVGSjntRuUdsswcgpPtPV1FMs9RLFPXj_NFO-v1Esg5EzLIFUqhkmOTKwIcO-fNg8vGMdzmeCw')"></div>
+<div class="relative z-10 flex flex-col items-center text-center max-w-[container-max] mx-auto">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 glass-panel mb-8">
+<span class="w-2 h-2 rounded-full bg-[#00B7C3] animate-pulse shadow-[0_0_10px_rgba(0,183,195,0.8)]"></span>
+<span class="font-mono-label text-mono-label uppercase text-[#00B7C3]">System Active</span>
+</div>
+<h1 class="font-display-hero-mobile text-display-hero-mobile md:font-display-hero md:text-[100px] lg:text-display-hero text-on-surface mb-8 tracking-tighter leading-none">
+                Applied AI Research
+            </h1>
+<p class="font-mono-label text-mono-label md:text-sm text-on-surface-variant max-w-2xl leading-relaxed">
+                Investigating the intersections of Healthcare AI and Enterprise Systems Modernization.
+            </p>
+</div>
+</header>
+<!-- Featured Publications (Bento Grid) -->
+<section class="px-margin-mobile md:px-margin-desktop py-section-gap max-w-[container-max] mx-auto relative z-10">
+<div class="flex flex-col gap-4 mb-16">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Featured Publications</h2>
+<div class="w-24 h-1 bg-[#0F62FE]"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-bento-gap">
+<!-- Card 1 (Full Width) -->
+<div class="md:col-span-12 glass-panel-gradient rounded-xl overflow-hidden relative group min-h-[400px] flex flex-col justify-end p-8">
+<div class="absolute inset-0 z-0 opacity-20 bg-cover bg-center transition-opacity duration-700 group-hover:opacity-40" data-alt="An abstract, high-tech digital rendering illustrating the fusion of Convolutional Neural Networks and Transformer models. The visual style is cinematic and minimalistic, set in a pure black void with intricate, glowing cyan and deep blue neural pathways connecting geometric nodes. The lighting is dramatic, focusing on the intersection of the two architectures to emphasize advanced machine learning processes." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDaxnmNLcYUJIsiTLorFhVed5kyyuRsKrAXA9EGZC5S0eUC6Vg5bYApJg3c2MYjuXwi5dqNC-8jxgshxt5EfSPALMY-vPgceWP98PwBb7e6YzBu5MPi8HcB3D7amT7MMLD-AcV4UszGNt_xL3aGCXXdEJx3gdipUskOpZXiMBg43kPI6YFqO5QexAn87h6tDtxE9M7_qeK_VVrvm4q1F-izIh6xT_VS8zh3cQPwRcQbfQQFetLTpX6hyA')"></div>
+<div class="relative z-10">
+<div class="flex flex-wrap gap-3 mb-6">
+<span class="inline-flex items-center gap-2 px-3 py-1 rounded border border-[#00B7C3]/30 bg-[#00B7C3]/5 font-mono-label text-mono-label text-[#00B7C3]">
+<span class="material-symbols-outlined text-[14px]">award_star</span>
+                            Accepted &amp; Published - IEEE DSBS 2026
+                        </span>
+<span class="inline-flex items-center px-3 py-1 rounded border border-outline-variant font-mono-label text-mono-label text-on-surface-variant sticky top-4">
+                            Accuracy: 97.22%
+                        </span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-6 max-w-4xl tracking-tight">
+                        Alzheimer's Disease Classification using ResNet-DeiT Hybrid Model
+                    </h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 rounded border border-outline-variant/50 font-mono-label text-mono-label text-on-surface-variant bg-surface/50">PyTorch</span>
+</div>
+</div>
+</div>
+<!-- Card 2 (Half Width) -->
+<div class="md:col-span-6 glass-panel-gradient rounded-xl overflow-hidden relative group min-h-[320px] flex flex-col justify-end p-8">
+<div class="absolute inset-0 z-0 opacity-20 bg-cover bg-center transition-opacity duration-700 group-hover:opacity-40" data-alt="A brutalist, high-contrast wireframe rendering of a massive enterprise server rack dissolving into data." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuACP2o7Dvfrc5s5DWRKl4ocd9gKkl7D6WjObYuX6GVeEJtTctVNMqiOhQce_lF5SG2RoAa0t3IQJYgzMFlm_TZgCFabiJgTk2EfTB8N69gldYeoAEg8o92BCsubWRElwZqJ7hDP14NRJldXsjF_-o3uCjPxibo6wMfCwOfhVhpxQVvYQdqYXJh09jL_wRnNc4GQ_OXcXO9yGF1INIybUyemi8BUJgmOiJFZUjUq0MFQ_cZyAOx00r8QAQ')"></div>
+<div class="relative z-10">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-6 tracking-tight">
+                        AI-Assisted Mainframe Modernization
+                    </h3>
+<p class="font-mono-label text-mono-label text-on-surface-variant mb-6 uppercase tracking-widest">(OMP White Paper)</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 rounded border border-outline-variant/50 font-mono-label text-mono-label text-on-surface-variant bg-surface/50">XGBoost</span>
+<span class="px-3 py-1 rounded border border-outline-variant/50 font-mono-label text-mono-label text-on-surface-variant bg-surface/50">SHAP</span>
+</div>
+</div>
+</div>
+<!-- Card 3 (Half Width) -->
+<div class="md:col-span-6 glass-panel-gradient rounded-xl overflow-hidden relative group min-h-[320px] flex flex-col justify-end p-8">
+<div class="absolute inset-0 z-0 opacity-20 bg-cover bg-center transition-opacity duration-700 group-hover:opacity-40" data-alt="Glowing decision tree ensembles." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDh7PeDtBLCIhucjod33M14NJA5IggI1WTHp60xHVjxxg1UZ7yd0_IuXkEdnx5Lo71voLopZ6TTYOakBckMQQEFloZF4SmhH5H-GuKBuSo21LoK86g6-VvduN7-LcSAhVaiNFxi2yp2pigmv7xQgT89i_8ljAwOdh4VBxqQ74pzSEMVwxMo2r77oaS3OP7vtwydrOJh-MUNGlXq73ySjwwVCfF3RzO_Ln4HFsPLKZAI-eyrHUWU1-sJaQ')"></div>
+<div class="relative z-10">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-6 tracking-tight">
+                        Gradient Boosting Ensemble for Diabetic Complication Prediction (IC3DCM 2026)
+                    </h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 rounded border border-outline-variant/50 font-mono-label text-mono-label text-on-surface-variant bg-surface/50">[ XGBoost ]</span>
+<span class="px-3 py-1 rounded border border-outline-variant/50 font-mono-label text-mono-label text-on-surface-variant bg-surface/50">[ LightGBM ]</span>
+<span class="px-3 py-1 rounded border border-outline-variant/50 font-mono-label text-mono-label text-on-surface-variant bg-surface/50">[ CatBoost ]</span>
+<span class="px-3 py-1 rounded border border-outline-variant/50 font-mono-label text-mono-label text-on-surface-variant bg-surface/50">[ SHAP ]</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- The Archive (Brutalist List) -->
+<section class="px-margin-mobile md:px-margin-desktop py-section-gap max-w-[container-max] mx-auto relative z-10 flex flex-col lg:flex-row gap-16">
+<div class="lg:w-1/4">
+<div class="sticky top-32 flex flex-col gap-4 mb-16 lg:mb-0">
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">The Archive</h2>
+</div>
+</div>
+<div class="lg:w-3/4 flex flex-col border-t border-white/20">
+<!-- Row 1 -->
+<div class="archive-row group py-8 border-b border-white/20 hover:bg-white/5 transition-colors cursor-pointer flex flex-col gap-2 px-4 relative">
+<div class="absolute right-8 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-10 transition-opacity pointer-events-none">
+<span class="material-symbols-outlined text-[120px]">account_tree</span>
+</div>
+<div class="relative z-10">
+<h3 class="font-headline-md text-xl md:text-2xl text-on-surface mb-2 font-bold tracking-tight">
+                        Sepsis Treatment Optimization using Reinforcement Learning (MIMIC-III)
+                    </h3>
+<p class="font-mono-label text-mono-label text-on-surface-variant">
+                        Markov Decision Process and survival-based reward functions.
+                    </p>
+</div>
+</div>
+<!-- Row 2 -->
+<div class="archive-row group py-8 border-b border-white/20 hover:bg-white/5 transition-colors cursor-pointer flex flex-col gap-2 px-4 relative">
+<div class="relative z-10">
+<h3 class="font-headline-md text-xl md:text-2xl text-on-surface mb-2 font-bold tracking-tight">
+                        Agentic AIOps on IBM Z (Whitepaper)
+                    </h3>
+</div>
+</div>
+</div>
+</section>
+<script>
+    document.querySelectorAll('.archive-row').forEach(row => {
+        row.addEventListener('mousemove', e => {
+            const rect = row.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            row.style.setProperty('--mouse-x', `${x}px`);
+            row.style.setProperty('--mouse-y', `${y}px`);
+        });
+    });
+</script>
+<!-- Footer from Shared Components -->
+<footer class="w-full min-h-[614px] flex flex-col justify-end border-t border-white/5 px-margin-desktop pb-12 pt-section-gap w-full bg-surface relative overflow-hidden">
+<div class="relative z-10 flex flex-col items-center justify-center flex-grow mb-16">
+<h2 class="font-display-hero-mobile text-display-hero-mobile md:font-display-hero md:text-display-hero text-on-surface text-center mb-12 tracking-tighter">
+                Access Manuscripts?
+            </h2>
+<div class="flex flex-wrap justify-center gap-6">
+<button class="glow-button bg-[#0F62FE] text-white font-bold uppercase px-8 py-4 rounded-full font-mono-label tracking-widest hover:bg-blue-600 transition-all">
+                    Google Scholar
+                </button>
+<button class="glass-panel text-on-surface font-bold uppercase px-8 py-4 rounded-full font-mono-label tracking-widest hover:bg-white/10 transition-all">
+                    GitHub
+                </button>
+<button class="glass-panel text-on-surface font-bold uppercase px-8 py-4 rounded-full font-mono-label tracking-widest hover:bg-white/10 transition-all">
+                    Email
+                </button>
+</div>
+</div>
+<div class="relative z-10 flex flex-col md:flex-row justify-between items-center gap-8 w-full border-t border-white/5 pt-8">
+<span class="font-display-hero text-display-hero font-extrabold opacity-5 select-none absolute left-0 bottom-0 pointer-events-none translate-y-1/4">ARCHITECT_OS</span>
+<p class="font-mono-label text-mono-label uppercase text-on-surface-variant relative z-10">
+                ©2024 ARCHITECT_OS. ALL RIGHTS RESERVED. ENGINEERED FOR PRECISION.
+            </p>
+<div class="flex gap-6 font-mono-label text-mono-label uppercase text-on-surface-variant opacity-80 hover:opacity-100 relative z-10">
+<a class="hover:text-secondary transition-colors duration-300" href="#">TERMINAL</a>
+<a class="hover:text-secondary transition-colors duration-300" href="#">DOCUMENTATION</a>
+<a class="hover:text-secondary transition-colors duration-300" href="#">RESOURCES</a>
+<a class="hover:text-secondary transition-colors duration-300" href="#">PRIVACY</a>
+<a class="hover:text-secondary transition-colors duration-300" href="#">SECURITY</a>
+</div>
+</div>
+</footer>
+</body></html>

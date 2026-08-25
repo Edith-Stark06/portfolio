@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+
+<html class="dark scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ramana Sree K V | Enterprise AI &amp; Automation Engineer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Plus+Jakarta+Sans:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-fixed": "#dbe1ff",
+                        "on-error": "#690005",
+                        "background": "#05070a", /* Updated base color */
+                        "secondary": "#4bd9e5",
+                        "primary-container": "#0f62fe",
+                        "on-background": "#e2e2e2",
+                        "on-secondary-container": "#004347",
+                        "inverse-on-surface": "#303030",
+                        "tertiary-container": "#6e7070",
+                        "on-primary-fixed": "#00174c",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "on-secondary": "#00363b",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "outline-variant": "#424656",
+                        "surface-container-low": "#1b1b1b",
+                        "surface-bright": "#393939",
+                        "primary": "#b4c5ff",
+                        "on-surface": "#e2e2e2",
+                        "secondary-fixed": "#7ff4ff",
+                        "surface-container": "#1f1f1f",
+                        "error-container": "#93000a",
+                        "surface-variant": "#353535",
+                        "inverse-primary": "#0052dd",
+                        "tertiary": "#c6c6c7",
+                        "surface-container-highest": "#353535",
+                        "on-surface-variant": "#c3c6d8",
+                        "secondary-container": "#02b7c3",
+                        "tertiary-fixed": "#e2e2e2",
+                        "surface": "#131313",
+                        "on-primary-container": "#f3f3ff",
+                        "outline": "#8c90a2",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary-container": "#f4f4f4",
+                        "on-primary": "#002979",
+                        "secondary-fixed-dim": "#4bd9e5",
+                        "on-primary-fixed-variant": "#003da9",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-tertiary": "#2f3131",
+                        "inverse-surface": "#e2e2e2",
+                        "surface-dim": "#131313",
+                        "surface-tint": "#b4c5ff",
+                        "surface-container-high": "#2a2a2a",
+                        "error": "#ffb4ab",
+                        "on-secondary-fixed-variant": "#004f55",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-secondary-fixed": "#002022",
+                        "on-tertiary-fixed-variant": "#454747"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "margin-mobile": "20px",
+                        "bento-gap": "16px",
+                        "container-max": "1440px",
+                        "margin-desktop": "80px",
+                        "gutter": "24px",
+                        "section-gap": "160px"
+                    },
+                    fontFamily: {
+                        "body-md": ["Inter"],
+                        "display-hero-mobile": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "display-hero": ["Plus Jakarta Sans"],
+                        "mono-label": ["JetBrains Mono"]
+                    },
+                    fontSize: {
+                        "body-md": ["16px", { lineHeight: "24px", letterSpacing: "0", fontWeight: "400" }],
+                        "display-hero-mobile": ["64px", { lineHeight: "60px", letterSpacing: "-0.04em", fontWeight: "800" }],
+                        "body-lg": ["18px", { lineHeight: "27px", letterSpacing: "0", fontWeight: "400" }],
+                        "headline-md": ["32px", { lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "600" }],
+                        "headline-lg": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "display-hero": ["120px", { lineHeight: "110px", letterSpacing: "-0.05em", fontWeight: "800" }],
+                        "mono-label": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Global Styles */
+        ::selection {
+            background-color: #0F62FE;
+            color: #FFFFFF;
+        }
+        body {
+            background-color: #05070a;
+            color: #e2e2e2;
+            overflow-x: hidden;
+            cursor: default;
+        }
+
+        /* Cinematic Grain - Enhanced */
+        .film-grain {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.07;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            mix-blend-mode: overlay;
+        }
+
+        /* Glassmorphism & Cards - Enhanced for Apple-tier */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .bento-card {
+            background: linear-gradient(145deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.01) 100%);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .bento-card:hover {
+            border-color: rgba(255, 255, 255, 0.25);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Spotlight Effect for Bento Cards */
+        .spotlight-overlay {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background: radial-gradient(circle 500px at var(--mouse-x) var(--mouse-y), rgba(15, 98, 254, 0.1), transparent 70%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            z-index: 10;
+        }
+        .bento-card:hover .spotlight-overlay {
+            opacity: 1;
+        }
+
+        /* Animations */
+        @keyframes revealUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+                filter: blur(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+                filter: blur(0);
+            }
+        }
+        
+        .animate-reveal {
+            animation: revealUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+
+        @keyframes pulse-dot {
+            0% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.5); opacity: 0.2; }
+            100% { transform: scale(1); opacity: 0.8; }
+        }
+
+        .scroll-dot {
+            animation: pulse-dot 2s infinite;
+        }
+
+        /* Magnetic Hover */
+        .magnetic {
+            display: inline-block;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        /* Button Glow Aura */
+        .glow-btn {
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+        .glow-btn::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: #0F62FE;
+            z-index: -1;
+            border-radius: 9999px;
+            box-shadow: inset 0 2px 10px rgba(255,255,255,0.2), 0 0 0 rgba(15, 98, 254, 0);
+            transition: box-shadow 0.3s ease;
+        }
+        .glow-btn:hover::before {
+            box-shadow: inset 0 2px 10px rgba(255,255,255,0.4), 0 0 40px rgba(15, 98, 254, 0.4);
+        }
+
+        /* Vertical Side Titles */
+        .vertical-title {
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            white-space: nowrap;
+        }
+        
+        /* Hide scrollbar */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md antialiased selection:bg-primary-container selection:text-white">
+<!-- Global Premium Background System -->
+<div class="fixed inset-0 -z-50 bg-[#05070A]">
+<img alt="Premium Background" class="w-full h-full object-cover opacity-60 mix-blend-screen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDASqzu5b5EsZ1Sl1U13irlaPcSe8lj28Vjs4bq3s6fQgHiWYN871lt39A7Nk4E0EbMQ-tyCTTbVPWtnoD4Bqp8f3Ve5ofnHqUqUV--gCQOih3AKRhIxcKtcLUOF14kUKhXCfGvwrSIZZIfAzaSrgqa0IVGoiTzv-YscpWvDSmds5NFCnRz_Sp6-nt_WPiwj2ixskYH1tke00MpyXcfTyPQAJKhUL_UOjWoJQmyk5ygZGPpPp_kkSO-A"/>
+<div class="absolute inset-0 bg-gradient-to-b from-[#05070A]/30 via-transparent to-[#05070A]/90"></div>
+</div>
+<div class="film-grain"></div>
+<!-- Top Navigation (Appears on scroll via JS) -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-desktop py-6 max-w-container-max mx-auto bg-black/20 backdrop-blur-2xl border-b border-white/10 opacity-0 -translate-y-full transition-all duration-500" id="top-nav">
+<div class="font-mono-label text-mono-label font-bold tracking-tighter text-primary">
+            AETHER_ENG
+        </div>
+<nav class="hidden md:flex gap-8">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-mono-label text-mono-label" href="#about">About</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-mono-label text-mono-label" href="#philosophy">Philosophy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-mono-label text-mono-label" href="#work">Projects</a>
+</nav>
+<button class="glow-btn px-6 py-2 rounded-full font-mono-label text-mono-label font-bold text-white uppercase tracking-wider hidden md:block">
+            Hire Me
+        </button>
+</header>
+<main class="max-w-container-max mx-auto relative z-10">
+<!-- Hero Section -->
+<section class="relative min-h-screen flex flex-col justify-center px-margin-mobile md:px-margin-desktop pt-24 pb-12 overflow-hidden">
+<div class="relative z-10 max-w-6xl">
+<h2 class="font-mono-label text-mono-label text-primary mb-6 animate-reveal">RAMANA SREE K V</h2>
+<h1 class="font-display-hero-mobile md:font-display-hero text-display-hero-mobile md:text-display-hero text-on-background animate-reveal delay-1">
+                    Enterprise AI <br/> &amp; Automation
+                </h1>
+<p class="mt-8 max-w-2xl font-mono-label text-mono-label text-on-surface-variant animate-reveal delay-2 leading-relaxed">
+                    Applying analytical thinking, automation, and AI to solve complex real-world data challenges.
+                </p>
+</div>
+<!-- Scroll Indicator -->
+<div class="absolute bottom-12 left-margin-mobile md:left-margin-desktop flex flex-col items-center animate-reveal delay-3">
+<div class="w-[1px] h-24 bg-gradient-to-b from-transparent via-primary-container to-transparent opacity-50 relative">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-secondary scroll-dot shadow-[0_0_10px_rgba(75,217,229,0.8)]"></div>
+</div>
+<span class="font-mono-label text-mono-label text-on-surface-variant mt-4 opacity-50 tracking-widest text-[10px]">SCROLL</span>
+</div>
+</section>
+<!-- Accolade Bar -->
+<section class="border-y border-white/10 py-8 overflow-hidden bg-white/[0.02] backdrop-blur-md relative z-20">
+<div class="flex whitespace-nowrap overflow-x-auto px-margin-mobile md:px-margin-desktop gap-12 md:gap-24 items-center no-scrollbar opacity-70 hover:opacity-100 transition-opacity duration-500">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+<span class="font-mono-label text-mono-label text-outline uppercase tracking-wider">IBM Champion 2025 &amp; 2026</span>
+</div>
+<div class="w-1 h-1 bg-outline rounded-full"></div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline">terminal</span>
+<span class="font-mono-label text-mono-label text-outline uppercase tracking-wider">Linux Foundation OMP Mentee</span>
+</div>
+<div class="w-1 h-1 bg-outline rounded-full"></div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline" style="font-variation-settings: 'FILL' 1;">military_tech</span>
+<span class="font-mono-label text-mono-label text-outline uppercase tracking-wider">IEEE DSBS 2026 Best Paper</span>
+</div>
+<div class="w-1 h-1 bg-outline rounded-full"></div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline">stars</span>
+<span class="font-mono-label text-mono-label text-outline uppercase tracking-wider">IBM Z Superstar Ambassador</span>
+</div>
+</div>
+</section>
+<!-- Engineering Philosophy -->
+<section class="relative min-h-screen flex items-center justify-center py-section-gap px-margin-mobile md:px-margin-desktop border-b border-white/5" id="philosophy">
+<!-- Asymmetric Tech Title -->
+<div class="absolute left-margin-mobile md:left-margin-desktop top-section-gap hidden lg:block opacity-30">
+<h3 class="vertical-title font-mono-label text-mono-label text-primary tracking-[0.2em] uppercase">01 // Philosophy</h3>
+<div class="w-[1px] h-32 bg-primary/30 mx-auto mt-4"></div>
+</div>
+<div class="max-w-4xl mx-auto text-center z-10 relative">
+<!-- AI Active Indicator -->
+<div class="flex items-center justify-center gap-3 mb-12">
+<div class="relative flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-secondary"></span>
+</div>
+<span class="font-mono-label text-mono-label text-secondary tracking-widest">SYSTEM_THINKING_ACTIVE</span>
+</div>
+<blockquote class="font-headline-md md:font-headline-lg text-headline-md md:text-headline-lg text-on-background text-balance leading-tight drop-shadow-2xl">
+                    "Automating source code analysis, documentation generation, and developer workflows through <span class="text-primary-container italic">AI-driven approaches</span>."
+                </blockquote>
+</div>
+</section>
+<!-- Featured Work (Bento Grid) -->
+<section class="relative py-section-gap px-margin-mobile md:px-margin-desktop" id="work">
+<div class="absolute left-margin-mobile md:left-margin-desktop top-section-gap hidden lg:block opacity-30">
+<h3 class="vertical-title font-mono-label text-mono-label text-primary tracking-[0.2em] uppercase">02 // Deployments</h3>
+<div class="w-[1px] h-32 bg-primary/30 mx-auto mt-4"></div>
+</div>
+<div class="lg:pl-32 max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-bento-gap">
+<!-- Card 1 (Large - spans 12 cols or 8 depending on preference, doing 12 for high impact) -->
+<div class="bento-card col-span-1 md:col-span-12 rounded-xl p-8 md:p-12 min-h-[400px] flex flex-col justify-between group cursor-pointer">
+<div class="spotlight-overlay"></div>
+<div class="relative z-10">
+<div class="flex justify-between items-start mb-6">
+<span class="px-3 py-1 rounded-full border border-outline-variant font-mono-label text-mono-label text-outline bg-black/30 backdrop-blur-sm">ENTERPRISE SCALE</span>
+<span class="material-symbols-outlined text-primary-container opacity-50 group-hover:opacity-100 transition-opacity">arrow_outward</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-background max-w-3xl mb-4 group-hover:text-primary transition-colors">
+                                AI-Powered Enterprise Code Analysis &amp; Workflow Automation Platform
+                            </h3>
+<div class="flex flex-wrap gap-2 mt-auto pt-12">
+<span class="font-mono-label text-mono-label text-tertiary-fixed-dim">Python</span>
+<span class="font-mono-label text-mono-label text-outline-variant">//</span>
+<span class="font-mono-label text-mono-label text-tertiary-fixed-dim">FastAPI</span>
+<span class="font-mono-label text-mono-label text-outline-variant">//</span>
+<span class="font-mono-label text-mono-label text-tertiary-fixed-dim">Streamlit</span>
+<span class="font-mono-label text-mono-label text-outline-variant">//</span>
+<span class="font-mono-label text-mono-label text-tertiary-fixed-dim">ChromaDB</span>
+</div>
+</div>
+</div>
+<!-- Card 2 (Medium - spans 7 cols) -->
+<div class="bento-card col-span-1 md:col-span-7 rounded-xl p-8 min-h-[320px] flex flex-col justify-between group cursor-pointer">
+<div class="spotlight-overlay"></div>
+<div class="relative z-10 h-full flex flex-col justify-between">
+<div class="flex justify-between items-start mb-6">
+<span class="px-3 py-1 rounded-full border border-outline-variant font-mono-label text-mono-label text-outline bg-black/30 backdrop-blur-sm">SUSTAINABILITY</span>
+<span class="material-symbols-outlined text-primary-container opacity-50 group-hover:opacity-100 transition-opacity">arrow_outward</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-background mb-4 group-hover:text-primary transition-colors">
+                                    EcoTrace India
+                                </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">AI-Powered E-Waste Tracking</p>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="font-mono-label text-mono-label text-tertiary-fixed-dim">YOLO</span>
+<span class="font-mono-label text-mono-label text-outline-variant">//</span>
+<span class="font-mono-label text-mono-label text-tertiary-fixed-dim">LSTM</span>
+<span class="font-mono-label text-mono-label text-outline-variant">//</span>
+<span class="font-mono-label text-mono-label text-tertiary-fixed-dim">Hyperledger Fabric</span>
+</div>
+</div>
+</div>
+<!-- Card 3 (Small - spans 5 cols) -->
+<div class="bento-card col-span-1 md:col-span-5 rounded-xl p-8 min-h-[320px] flex flex-col justify-between group cursor-pointer">
+<div class="spotlight-overlay"></div>
+<div class="relative z-10 h-full flex flex-col justify-between">
+<div class="flex justify-between items-start mb-6">
+<span class="px-3 py-1 rounded-full border border-outline-variant font-mono-label text-mono-label text-outline bg-black/30 backdrop-blur-sm">COMPUTER VISION</span>
+<span class="material-symbols-outlined text-primary-container opacity-50 group-hover:opacity-100 transition-opacity">arrow_outward</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-background mb-8 group-hover:text-primary transition-colors">
+                                Solar AI Framework
+                            </h3>
+<div class="flex flex-wrap gap-2">
+<span class="font-mono-label text-mono-label text-tertiary-fixed-dim">TensorFlow</span>
+<span class="font-mono-label text-mono-label text-outline-variant">//</span>
+<span class="font-mono-label text-mono-label text-tertiary-fixed-dim">OpenCV</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full relative py-section-gap bg-black/40 backdrop-blur-xl flex flex-col items-center justify-center px-margin-desktop text-center mt-32 border-t border-white/10 overflow-hidden z-10">
+<!-- Ambient bottom glow -->
+<div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-64 bg-primary-container/20 blur-[120px] rounded-full pointer-events-none mix-blend-screen"></div>
+<div class="relative z-10 w-full flex flex-col items-center">
+<h2 class="font-display-hero-mobile md:font-display-hero text-display-hero-mobile md:text-display-hero uppercase text-on-background mb-16 tracking-tighter">
+                Initiate Sequence?
+            </h2>
+<div class="flex flex-wrap justify-center gap-12 md:gap-24">
+<a class="magnetic group relative" href="#">
+<span class="font-mono-label text-mono-label text-on-surface-variant group-hover:text-primary transition-all duration-500 group-hover:tracking-widest uppercase block mb-2">Connect</span>
+<span class="font-headline-md text-headline-md text-on-background group-hover:text-secondary-container transition-colors duration-300">LinkedIn</span>
+</a>
+<a class="magnetic group relative" href="#">
+<span class="font-mono-label text-mono-label text-on-surface-variant group-hover:text-primary transition-all duration-500 group-hover:tracking-widest uppercase block mb-2">Code</span>
+<span class="font-headline-md text-headline-md text-on-background group-hover:text-secondary-container transition-colors duration-300">GitHub</span>
+</a>
+<a class="magnetic group relative" href="#">
+<span class="font-mono-label text-mono-label text-on-surface-variant group-hover:text-primary transition-all duration-500 group-hover:tracking-widest uppercase block mb-2">Comm</span>
+<span class="font-headline-md text-headline-md text-on-background group-hover:text-secondary-container transition-colors duration-300">Email</span>
+</a>
+</div>
+<div class="mt-32 font-mono-label text-mono-label text-outline-variant opacity-50">
+                ©2024 AETHER AUTOMATION SEQUENCE
+            </div>
+</div>
+</footer>
+<script>
+        // Spotlight Effect for Bento Cards
+        const cards = document.querySelectorAll('.bento-card');
+        cards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+
+        // Top Nav Scroll Reveal
+        const topNav = document.getElementById('top-nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 150) {
+                topNav.classList.remove('opacity-0', '-translate-y-full');
+                topNav.classList.add('opacity-100', 'translate-y-0');
+            } else {
+                topNav.classList.add('opacity-0', '-translate-y-full');
+                topNav.classList.remove('opacity-100', 'translate-y-0');
+            }
+        });
+
+        // Magnetic Hover Effect
+        const magneticElements = document.querySelectorAll('.magnetic');
+        
+        magneticElements.forEach((elem) => {
+            elem.addEventListener('mousemove', (e) => {
+                const rect = elem.getBoundingClientRect();
+                const h = rect.width / 2;
+                
+                const x = e.clientX - rect.left - h;
+                const y = e.clientY - rect.top - (rect.height / 2);
+                
+                // Max movement distance
+                const maxDist = 15;
+                
+                // Calculate percentage from center
+                const percentX = x / h;
+                const percentY = y / (rect.height / 2);
+                
+                elem.style.transform = `translate(${percentX * maxDist}px, ${percentY * maxDist}px)`;
+            });
+            
+            elem.addEventListener('mouseleave', () => {
+                elem.style.transform = `translate(0px, 0px)`;
+            });
+        });
+    </script>
+</body></html>
