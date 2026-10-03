@@ -175,7 +175,7 @@ export default function HomePage() {
                   href="/projects"
                   className="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-primary text-white font-mono text-mono-label uppercase tracking-wider hover:bg-primary-container transition-all duration-300 shadow-[0_0_20px_rgba(15,98,254,0.4)] hover:shadow-[0_0_30px_rgba(15,98,254,0.7)] group focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
                 >
-                  <span>Explore Deployments</span>
+                  <span>Explore Projects</span>
                   <span className="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform" aria-hidden="true">
                     arrow_forward
                   </span>
@@ -298,13 +298,13 @@ export default function HomePage() {
         <section
           className="relative py-24 md:py-[160px] px-5 md:px-[80px] border-b border-white/5"
           id="work"
-          aria-label="Featured Deployments"
+          aria-label="Featured Projects"
         >
           <div className="max-w-7xl mx-auto">
             <ScrollReveal y={30} duration={0.8} className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
               <div>
                 <span className="font-mono text-mono-label text-primary uppercase tracking-[0.2em] block mb-3">
-                  02 // FEATURED DEPLOYMENTS
+                  02 // FEATURED PROJECTS
                 </span>
                 <h2 className="font-display text-display-hero-mobile md:text-headline-lg text-on-background font-bold">
                   Engineered Case Studies
@@ -315,7 +315,7 @@ export default function HomePage() {
                 href="/projects"
                 className="inline-flex items-center gap-2 font-mono text-mono-label text-secondary hover:text-white transition-colors tracking-wider uppercase text-xs focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary rounded"
               >
-                <span>View All Deployments</span>
+                <span>View All Projects</span>
                 <span className="material-symbols-outlined text-[16px]" aria-hidden="true">
                   arrow_forward
                 </span>

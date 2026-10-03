@@ -8,10 +8,10 @@ import { media } from "@/data/media";
 import { projects } from "@/data/projects";
 
 export const metadata: Metadata = {
-  title: "Enterprise Deployments",
+  title: "Engineering Projects",
   description: "AI systems and research prototypes: Mainframe Modernization Assistant, EcoTrace India, Solar AI Framework, ATLAS, KubeMedic, Kyber-6G, CogniQueue and a waste-collection robot. Case studies with technical depth and honest evidence labels.",
   openGraph: {
-    title: "Enterprise Deployments | Ramana Sree K V",
+    title: "Engineering Projects | Ramana Sree K V",
     description: "Mainframe Modernization, EcoTrace India, Solar AI Framework, ATLAS, KubeMedic, Kyber-6G. AI systems with full technical depth and evidence labels.",
     url: "https://ramanasree.dev/projects",
     siteName: "AETHER_ENG",
@@ -38,20 +38,20 @@ export default function ProjectsPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/20 to-background/40 -z-10 pointer-events-none" aria-hidden="true" />
 
         {/* Hero Section */}
-        <section className="mb-20 md:mb-[120px]" aria-label="Enterprise Deployments Overview">
+        <section className="mb-20 md:mb-[120px]" aria-label="Engineering Projects Overview">
           <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/5 mb-8 backdrop-blur-md">
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_10px_rgba(15,98,254,0.8)]" aria-hidden="true" />
             <span className="font-mono text-mono-label uppercase text-primary tracking-widest text-[11px] font-semibold">
-              DEPLOYMENT CATALOG // CASE STUDIES
+              PROJECT CATALOG // CASE STUDIES
             </span>
           </div>
 
           <h1 className="font-display text-display-hero-mobile md:text-display-hero text-on-background mb-6 font-extrabold tracking-tight">
-            Enterprise Deployments
+            Engineering Projects
           </h1>
 
           <p className="font-mono text-mono-label md:text-base text-on-surface-variant max-w-3xl leading-relaxed">
-            Production-grade systems designed to solve complex engineering problems through AI, distributed systems, and modern software architecture.
+            Enterprise systems, applied research and prototypes spanning AI, distributed systems and security. Each case study labels what is built, measured or still a concept.
           </p>
         </section>
 

@@ -148,8 +148,8 @@ export const projects: Project[] = [
     description: "Autonomous vision-guided garbage pickup in simulation",
     category: "ROBOTICS",
     techStack: ["MuJoCo", "Gemini Vision", "Python", "ROS 2 topics"],
-    colSpan: "md:col-span-6",
-    minHeight: "min-h-[320px]",
+    colSpan: "md:col-span-12",
+    minHeight: "min-h-[280px]",
     overview:
       "A capstone simulation of an autonomous garbage-collecting robot: it patrols a plaza, uses a vision model to identify real litter, estimates its 3D position, drives to it and picks it up with a 6-DOF arm. A team project; the repository is hosted on a teammate's account.",
     challenge:
