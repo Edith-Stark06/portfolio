@@ -41,6 +41,14 @@ export const milestones: Milestone[] = [
   },
   {
     year: "2026",
+    title: "IBM Bob Hackathon: Top 50 & TechXchange Pass",
+    organization: "IBM",
+    description:
+      "KubeMedic, built with teammates Verona and Shivraj, placed in the Top 50 of the IBM Bob 2.0 hackathon and earned a conference pass to attend IBM TechXchange in Atlanta.",
+    type: "recognition",
+  },
+  {
+    year: "2026",
     title: "IEEE DSBS Best Paper",
     organization: "IEEE",
     description:

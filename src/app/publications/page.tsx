@@ -33,7 +33,7 @@ export default function PublicationsPage() {
     "AI-Assisted Mainframe Modernization": {
       reflection: "Demonstrating that SHAP feature attribution can explain COBOL code complexity transformed AI from a black-box model into a trusted migration assistant.",
       challenge: "Parsing legacy COBOL and JCL AST syntax trees without standardized schema specifications.",
-      impact: "Directly powered the Enterprise Code Analysis Platform, cutting review times by 60%.",
+      impact: "Informed the Mainframe Modernization Assistant; the paper reports a 60% reduction in code review time.",
     },
     "Gradient Boosting Ensemble for Diabetic Complication Prediction": {
       reflection: "Ensemble learning combining XGBoost, LightGBM, and CatBoost demonstrated that multi-model fusion captures complex non-linear clinical risk factors.",
@@ -60,7 +60,7 @@ export default function PublicationsPage() {
     {
       paper: "OMP White Paper 2025",
       model: "XGBoost + SHAP Code Analyzer",
-      system: "Enterprise Code Analysis Platform",
+      system: "Mainframe Modernization Assistant",
       slug: "/projects/enterprise-code-analysis",
     },
     {

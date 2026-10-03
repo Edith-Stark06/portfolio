@@ -89,7 +89,7 @@ export default function ArchitectPage() {
     { phase: "Experimentation", detail: "Benchmarking static AST parsing against LLM-assisted semantic parsing." },
     { phase: "Evaluation", detail: "Measuring accuracy, inference latency, and SHAP feature importance scores." },
     { phase: "Engineering Decision", detail: "Designing a hybrid parser combining deterministic AST rules with AI inference." },
-    { phase: "Production System", detail: "Deployed as the Enterprise Code Analysis & Migration Dashboard." },
+    { phase: "Production System", detail: "Delivered as the AI-Powered Mainframe Modernization Assistant: a FastAPI service and Streamlit workspace." },
   ];
 
   const maturityNodes = [

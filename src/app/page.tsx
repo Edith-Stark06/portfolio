@@ -270,7 +270,7 @@ export default function HomePage() {
               {[
                 { value: "2x", label: "IBM Champion", detail: "2025 & 2026 Global Recognition" },
                 { value: "03+", label: "Peer-Reviewed Papers", detail: "IEEE & Conference Publications" },
-                { value: "03", label: "Enterprise Deployments", detail: "Code Analysis, Solar & EcoTrace" },
+                { value: "08", label: "Engineering Projects", detail: "Mainframe, EcoTrace, Solar, ATLAS & more" },
                 { value: "01", label: "IEEE Best Paper", detail: "DSBS 2026 Award Winner" },
               ].map((metric, i) => (
                 <div

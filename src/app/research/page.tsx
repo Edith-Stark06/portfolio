@@ -36,10 +36,10 @@ export default function ResearchPage() {
       paper: "OMP White Paper 2025",
     },
     {
-      title: "Computer Vision & Radiometric Sensing",
+      title: "Computer Vision & Edge Detection",
       icon: "camera",
-      desc: "Real-time edge object detection (YOLO) and radiometric thermal imagery preprocessing for autonomous industrial defect detection.",
-      paper: "IC3DCM 2026",
+      desc: "YOLO object detection for e-waste devices and solar panels, with held-out and first-party evaluation, controlled ablations and documented negative results.",
+      paper: "EcoTrace & Solar AI",
     },
     {
       title: "Reinforcement Learning in Healthcare",
@@ -404,7 +404,7 @@ export default function ResearchPage() {
                 Academic papers are only the beginning. The ultimate value of scientific research is realized when validated algorithms are packaged into deterministic, high-throughput production software that enterprise teams rely on daily.
               </p>
               <p>
-                For example, our research into XGBoost feature importance scoring and AST code parsing directly powers the <strong>Enterprise Code Analysis &amp; Workflow Automation Platform</strong>, cutting manual code review times by 60% for enterprise developers.
+                For example, our research into AST-grounded code analysis directly informs the <strong>AI-Powered Mainframe Modernization Assistant</strong>, a parser-first COBOL analysis and Java generation platform in which the LLM never sees raw source. The white paper reports a 60% reduction in code review time.
               </p>
             </div>
           </ScrollReveal>
@@ -481,6 +481,14 @@ export default function ResearchPage() {
                 {
                   title: "Local Quantized LLM Fine-Tuning",
                   desc: "Fine-tuning 8B open-weight models for 100% offline air-gapped enterprise code analysis.",
+                },
+                {
+                  title: "Post-Quantum Security for 6G Swarms",
+                  desc: "Hybrid ML-KEM-1024 key exchange with mobility edge caching for 5G/6G UAV swarms, calibrated against Raspberry Pi 4 hardware (Kyber-6G manuscript in preparation).",
+                },
+                {
+                  title: "Capacity-Aware Diagnostic Triage",
+                  desc: "Value-of-information ranking and capacity-constrained scheduling for scarce MRI and PET slots in early Alzheimer's pathways (CogniQueue).",
                 },
                 {
                   title: "Survival-Based Reinforcement Learning",

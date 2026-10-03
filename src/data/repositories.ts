@@ -54,6 +54,36 @@ export const projectRepositories: RepositoryReference[] = [
     note: "Primary contributor; repository hosted under a shared account.",
     availability: "available",
   },
+  {
+    projectId: "atlas-governance",
+    owner: "Edith-Stark06",
+    name: "ATLAS",
+    url: "https://github.com/Edith-Stark06/ATLAS",
+    description:
+      "Adaptive Trust & Lifecycle Assurance System: a governance layer that decides whether autonomous financial agents can be trusted before they act.",
+    language: "TypeScript",
+    availability: "available",
+  },
+  {
+    projectId: "kubemedic",
+    owner: "Edith-Stark06",
+    name: "Kubemedic",
+    url: "https://github.com/Edith-Stark06/Kubemedic",
+    description:
+      "Evidence-driven Kubernetes incident response with IBM Bob reasoning and a human in the loop.",
+    language: "Python",
+    note: "Team project built with Verona and Shivraj.",
+    availability: "available",
+  },
+  {
+    projectId: "smart-waste-robot",
+    owner: "fahi016",
+    name: "GarbageDetector",
+    url: "https://github.com/fahi016/GarbageDetector",
+    language: "Python",
+    note: "Team capstone; repository hosted under a teammate's account.",
+    availability: "available",
+  },
 ];
 
 export function getRepositoryForProject(

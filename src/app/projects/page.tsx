@@ -9,10 +9,10 @@ import { projects } from "@/data/projects";
 
 export const metadata: Metadata = {
   title: "Enterprise Deployments",
-  description: "Production-grade AI systems: Enterprise Code Analysis Platform, EcoTrace India e-waste tracking, Solar Defect Analysis framework. Case studies with technical depth.",
+  description: "AI systems and research prototypes: Mainframe Modernization Assistant, EcoTrace India, Solar AI Framework, ATLAS, KubeMedic, Kyber-6G, CogniQueue and a waste-collection robot. Case studies with technical depth and honest evidence labels.",
   openGraph: {
     title: "Enterprise Deployments | Ramana Sree K V",
-    description: "Enterprise Code Analysis, EcoTrace India, Solar AI Framework. AI-powered production deployments with full technical depth.",
+    description: "Mainframe Modernization, EcoTrace India, Solar AI Framework, ATLAS, KubeMedic, Kyber-6G. AI systems with full technical depth and evidence labels.",
     url: "https://ramanasree.dev/projects",
     siteName: "AETHER_ENG",
     type: "website",
